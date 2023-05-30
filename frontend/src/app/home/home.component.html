@@ -1,8 +1,11 @@
 <div class="searcher">
-  <input #searchInput type="text" placeholder="nombre/apellido del asegurado"/>
-  <input type="submit" (click)="makeSearch(searchInput.value)"/>
+  <h1 *ngIf="usingMocks()" class="advice">Using Mocks</h1>
+  <div>
+    <input #searchInput type="text" placeholder="nombre/apellido del asegurado" 
+          (input)="resetInsureds($event)"/>
+    <input type="submit" (click)="makeSearch(searchInput.value)"/>
+  </div>
 </div>
-{{search()}}
 <div>
-
+  <app-insureds [insureds]="insureds$"></app-insureds>
 </div>

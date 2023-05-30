@@ -2,6 +2,7 @@ import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { InsuredService } from '../services/insured.service';
 import { Observable, of } from 'rxjs';
 import { Insured } from '../models/Insured';
+import * as insuredsMock from '../mock/insureds.json';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,20 @@ import { Insured } from '../models/Insured';
 })
 export class HomeComponent implements OnInit{
   insureds$:Observable<Insured[]> = of([]);
-  allInsureds$:Observable<Insured[]> = of([]);
-  search:WritableSignal<string> = signal<string>('');
+  allInsureds:Insured[] = [];
+  usingMocks:WritableSignal<boolean> = signal<boolean>(false);
 
   constructor(private service:InsuredService){
-    this.allInsureds$ = this.service.all();
+    this.insureds$ = this.service.all();
+    this.insureds$.subscribe({
+      next: (data:Insured[]) => this.allInsureds = data,
+      error: _ => {
+        let mocks:Insured[] = [];
+        Object.assign(mocks,insuredsMock)
+        this.insureds$ = of(mocks)
+        this.usingMocks.set(true);
+      }
+    });
   }
 
   ngOnInit(): void {}
@@ -22,5 +32,10 @@ export class HomeComponent implements OnInit{
   makeSearch(event:string):void{
     this.insureds$ = this.service.search(event);
     this.insureds$.subscribe()
+  }
+
+  resetInsureds(event:any){
+    if(!event.data)
+      this.insureds$ = of(this.allInsureds);
   }
 }

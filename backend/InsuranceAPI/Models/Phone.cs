@@ -13,5 +13,5 @@ public partial class Phone
 
     public string? Description { get; set; }
 
-    public virtual ICollection<Insured> Insureds { get; set; } = new List<Insured>();
+    public virtual Insured InsuredNavigation { get; set; } = null!;
 }

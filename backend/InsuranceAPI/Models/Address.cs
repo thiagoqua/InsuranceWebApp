@@ -19,5 +19,7 @@ public partial class Address
 
     public string Province { get; set; } = null!;
 
+    public string Country { get; set; } = null!;
+
     public virtual ICollection<Insured> Insureds { get; set; } = new List<Insured>();
 }

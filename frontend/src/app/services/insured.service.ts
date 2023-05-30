@@ -13,10 +13,11 @@ export class InsuredService {
   constructor(private api:HttpClient) {}
 
   all():Observable<Insured[]>{
-    return this.api.get<Insured[]>(`${this.API_URL}/insured/all`);
+    return this.api.get<Insured[]>(`${this.API_URL}/api/insured/all`);
   }
 
   search(query:string):Observable<Insured[]>{
-    return this.api.get<Insured[]>(`${this.API_URL}/insured/march?query=${query}`);
+    const param:string = query.replace(' ','+');
+    return this.api.get<Insured[]>(`${this.API_URL}/api/insured/search?query=${param}`);
   }
 }

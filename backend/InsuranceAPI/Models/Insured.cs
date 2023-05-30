@@ -23,8 +23,6 @@ public partial class Insured
 
     public string Dni { get; set; } = null!;
 
-    public int Phone { get; set; }
-
     public string? Cuit { get; set; }
 
     public int Producer { get; set; }
@@ -33,7 +31,7 @@ public partial class Insured
 
     public virtual Address AddressNavigation { get; set; } = null!;
 
-    public virtual Phone PhoneNavigation { get; set; } = null!;
+    public virtual ICollection<Phone> Phones { get; set; } = new List<Phone>();
 
     public virtual Producer ProducerNavigation { get; set; } = null!;
 }

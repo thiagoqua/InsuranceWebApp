@@ -23,8 +23,6 @@ public partial class DbInsuranceContext : DbContext
 
     public virtual DbSet<Producer> Producers { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Address>(entity =>
@@ -36,8 +34,12 @@ public partial class DbInsuranceContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("city");
+            entity.Property(e => e.Country)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("country");
             entity.Property(e => e.Departament).HasColumnName("departament");
-            entity.Property(e => e.Floor).HasColumnName("floor");
+            entity.Property(e => e.Floor).HasColumnName("_floor");
             entity.Property(e => e.Number)
                 .HasMaxLength(8)
                 .IsUnicode(false)
@@ -90,18 +92,12 @@ public partial class DbInsuranceContext : DbContext
                 .HasMaxLength(11)
                 .IsUnicode(false)
                 .HasColumnName("life");
-            entity.Property(e => e.Phone).HasColumnName("phone");
             entity.Property(e => e.Producer).HasColumnName("producer");
 
             entity.HasOne(d => d.AddressNavigation).WithMany(p => p.Insureds)
                 .HasForeignKey(d => d.Address)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_address_insured");
-
-            entity.HasOne(d => d.PhoneNavigation).WithMany(p => p.Insureds)
-                .HasForeignKey(d => d.Phone)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_phone_insured");
 
             entity.HasOne(d => d.ProducerNavigation).WithMany(p => p.Insureds)
                 .HasForeignKey(d => d.Producer)
@@ -125,15 +121,18 @@ public partial class DbInsuranceContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("number");
+
+            entity.HasOne(d => d.InsuredNavigation).WithMany(p => p.Phones)
+                .HasForeignKey(d => d.Insured)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_insured_phone");
         });
 
         modelBuilder.Entity<Producer>(entity =>
         {
             entity.ToTable("producer");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Firstname)
                 .HasMaxLength(20)
                 .IsUnicode(false)
