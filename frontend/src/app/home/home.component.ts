@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
       error: _ => {
         let mocks:Insured[] = [];
         Object.assign(mocks,insuredsMock)
-        this.insureds$ = of(mocks)
+        this.insureds$ = of(mocks);
         this.usingMocks.set(true);
       }
     });
@@ -34,8 +34,13 @@ export class HomeComponent implements OnInit{
     this.insureds$.subscribe()
   }
 
+  clearInput(event:HTMLInputElement):void{
+    event.value = '';
+    this.resetInsureds({data:null});
+  }
+
   resetInsureds(event:any){
-    if(!event.data)
+    if(!event.data || event.data === '')
       this.insureds$ = of(this.allInsureds);
   }
 }

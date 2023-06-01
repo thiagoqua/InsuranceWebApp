@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using InsuranceAPI.Models;
 using InsuranceAPI.Services;
 using InsuranceAPI.Repositories;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,12 +17,21 @@ builder.Services.AddDbContext<DbInsuranceContext>(opt =>
 );
 //adding DI instances
 builder.Services.AddScoped<IInsuredService, InsuredService>();
-builder.Services.AddScoped<IInsuredRepository,InsuredRepository>(); 
+builder.Services.AddScoped<IInsuredRepository, InsuredRepository>();
+builder.Services.AddScoped<IAddressRepository,AddressRepository>();
+builder.Services.AddScoped<IPhoneRepository, PhoneRepository>();
+builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
+
+//cors
 builder.Services.AddCors(opt => {
     opt.AddPolicy("angular_origin",policy =>
                           policy.WithOrigins("http://localhost:4200")
                           );
 });
+
+builder.Services.AddControllers().AddJsonOptions(opt => 
+    opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+);
 
 var app = builder.Build();
 

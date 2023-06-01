@@ -1,28 +1,39 @@
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Matrícula</th>
-    <th>Carpeta</th>
-    <th>Vigencia</th>
-    <th>Fecha de nacimiento</th>
-    <th>Dirección</th>
-    <th>DNI</th>
-    <th>CUIT</th>
-    <th>Productor</th>
-    <th>Descripción</th>
-  </tr>
-  <tr *ngFor="let insured of insureds | async">
-    <td>{{insured.firstname}}</td>
-    <td>{{insured.lastname}}</td>
-    <td>{{insured.license}}</td>
-    <td>{{insured.folder}}</td>
-    <td>{{insured.life}}</td>
-    <td>{{insured.born}}</td>
-    <td>{{insured.address}}</td>
-    <td>{{insured.dni}}</td>
-    <td>{{insured.cuit}}</td>
-    <td>{{insured.producer}}</td>
-    <td>{{insured.description}}</td>
-  </tr>
-</table>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Companía</th>
+        <th>Matrícula</th>
+        <th>Carpeta</th>
+        <th>Vigencia</th>
+        <th>Fecha de nacimiento</th>
+        <th>Dirección</th>
+        <th>DNI</th>
+        <th>CUIT</th>
+        <th>Productor</th>
+        <th>Descripción</th>
+        <th>Teléfonos</th>
+        <th>Descripción teléfonos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let insured of insureds | async"
+          [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}">
+        <td>{{insured.firstname + " " + insured.lastname}}</td>
+        <td><img src="{{insured.company}}" class="company-img"/></td>
+        <td>{{insured.license}}</td>
+        <td>{{insured.folder}}</td>
+        <td>{{insured.life}}</td>
+        <td>{{formatDate(insured.born)}}</td>
+        <td>{{formatAddress(insured.addressNavigation)}}</td>
+        <td>{{insured.dni}}</td>
+        <td>{{insured.cuit}}</td>
+        <td>{{formatProducer(insured.producerNavigation!)}}</td>
+        <td>{{insured.description}}</td>
+        <td>{{formatPhones(insured.phones)}}</td>
+        <td>{{formatPhonesDescription(insured.phones)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

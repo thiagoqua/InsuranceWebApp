@@ -1,9 +1,11 @@
 ﻿using InsuranceAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InsuranceAPI.Repositories {
     public interface IInsuredRepository {
         public List<Insured> getAll();
         public List<Insured> search(string query);
+        public Insured findById(int id);
     }
 
     public class InsuredRepository : IInsuredRepository{
@@ -14,7 +16,11 @@ namespace InsuranceAPI.Repositories {
         }
 
         public List<Insured> getAll() {
-            return _context.Insureds.ToList();
+            return _context.Insureds
+                .Include(ins => ins.AddressNavigation)
+                .Include(ins => ins.ProducerNavigation)
+                .Include(ins => ins.Phones)
+                .ToList();
         }
 
         public List<Insured> search(string query) {
@@ -24,7 +30,19 @@ namespace InsuranceAPI.Repositories {
                             ins.Firstname.Contains(query) || 
                             ins.Lastname.Contains(query))
                     select ins
-                    ).ToList();
+                    )
+                    .Include(ins => ins.AddressNavigation)
+                    .Include(ins => ins.ProducerNavigation)
+                    .Include(ins => ins.Phones)
+                    .ToList();
+        }
+
+        public Insured findById(int id) {
+            return _context.Insureds
+                    .Include(i => i.AddressNavigation)
+                    .Include(ins => ins.AddressNavigation)
+                    .Include(ins => ins.ProducerNavigation)
+                    .FirstOrDefault(i => i.Id == id);
         }
     }
 }

@@ -1,0 +1,57 @@
+div{
+    text-align: center;
+}
+
+mat-icon{
+    margin-top:50%;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-form-field{
+    width: 80%;
+}
+
+.section{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.button-container{
+    margin-top:3%;
+    display:flex;
+    justify-content: center;
+    gap:10rem;
+}
+
+.button-container button{
+    height: 100px;
+    width: 100px;
+}
+
+.clicked{
+    background-color:black;
+}
+
+.inside-items{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexdiv{
+    display:flex;
+    flex-direction: row;
+    gap:1.5rem;
+}

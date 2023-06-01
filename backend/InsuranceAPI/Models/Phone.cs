@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace InsuranceAPI.Models;
 
@@ -13,5 +14,6 @@ public partial class Phone
 
     public string? Description { get; set; }
 
+    [JsonIgnore]
     public virtual Insured InsuredNavigation { get; set; } = null!;
 }

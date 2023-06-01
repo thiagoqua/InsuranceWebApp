@@ -1,0 +1,220 @@
+<div style="height: 100%">
+  <div class="button-container">
+    <button
+      #addbutton
+      id="add-button"
+      mat-fab
+      class="pepe"
+      [color]="this.operation() == 1 ? 'secondary' : 'primary'"
+      (click)="addInsured()"
+    >
+      <mat-icon>exposure_plus_1</mat-icon>
+    </button>
+    <button
+      id="remove-button"
+      mat-fab
+      [color]="this.operation() == 2 ? 'secondary' : 'primary'"
+      (click)="removeInsured()"
+    >
+      <mat-icon>exposure_neg_1</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="this.operation() == 1">
+    <form [formGroup]="insuredForm" (ngSubmit)="handleSubmit()">
+      <h1>Datos personales</h1>
+      <div class="section">
+        <div>
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="firstname" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input matInput type="text" formControlName="lastname" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input matInput [matDatepicker]="bornPicker" [max]="maxDate"
+                    formControlName="born"/>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="bornPicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #bornPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Descripción (opcional)</mat-label>
+            <input matInput type="text" formControlName="description" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>DNI</mat-label>
+            <input matInput type="text" formControlName="dni" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>CUIT (opcional)</mat-label>
+            <input matInput type="text" formControlName="cuit" />
+          </mat-form-field>
+        </div>
+        <div class="inside-items">
+          <mat-form-field>
+            <mat-label>Tel</mat-label>
+            <input matInput #number type="text"/>
+          </mat-form-field>
+        </div>
+        <div class="inside-items">
+          <div class="flexdiv">
+            <mat-form-field>
+              <mat-label
+                >Descripción tel (opcional)</mat-label
+              >
+              <input matInput #desc type="text" />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="addPhone(number, desc)"
+              [disabled]="desc.value == '' || number.value == '' || phones.length > 2"
+            >
+              Agregar
+            </button>
+          </div>
+          <mat-list>
+            <mat-list-item *ngFor="let phone of phones">
+              <span matListItemTitle>{{ phone.number }}</span>
+              <span matListItemLine>{{ phone.description }}</span>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+      <h1>Dirección</h1>
+      <div class="section">
+        <div>
+          <mat-form-field>
+            <mat-label>Calle</mat-label>
+            <input matInput type="text" formControlName="street" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Número</mat-label>
+            <input matInput type="number" formControlName="number" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Localidad</mat-label>
+            <input matInput type="text" formControlName="city" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Provincia</mat-label>
+            <input matInput type="text" formControlName="province" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>País</mat-label>
+            <mat-select formControlName="country">
+              <mat-option *ngFor="let country of countries" [value]="country">
+                {{ country }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Piso (opcional)</mat-label>
+            <input matInput type="number" formControlName="floor" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Departamento (opcional)</mat-label>
+            <input matInput type="text" formControlName="departament" />
+          </mat-form-field>
+        </div>
+      </div>
+      <h1>Datos del seguro</h1>
+      <div class="section">
+        <div class="inside-items">
+          <h4>Compañía</h4>
+          <div class="flexdiv">
+            <mat-checkbox #fedpat type="checkbox" [disabled]="coopseg.checked"
+                          (change)="company='fedpat'">
+              <mat-label>Federación</mat-label>
+            </mat-checkbox>
+            <mat-checkbox #coopseg type="checkbox" [disabled]="fedpat.checked"
+                          (change)="company='coopseg'">
+              <mat-label>Cooperación</mat-label>
+            </mat-checkbox>
+          </div>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Matrícula</mat-label>
+            <input matInput type="text" formControlName="license" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Carpeta</mat-label>
+            <input matInput type="number" formControlName="folder" />
+          </mat-form-field>
+        </div>
+        <!-- <div>
+          <div class="inside-items">
+          <h4>Productor</h4>
+            <div class="flexdiv">
+              <mat-checkbox #meProducer type="checkbox" [disabled]="otherProducer.checked"
+                            formControlName="producer" [value]="userLogged.id">
+                <mat-label>Yo</mat-label>
+              </mat-checkbox>
+              <mat-checkbox #otherProducer type="checkbox" [disabled]="meProducer.checked">
+                <mat-label>Otro</mat-label>
+              </mat-checkbox>
+              <mat-form-field>
+                <mat-label>Productor</mat-label>
+                <mat-select [disabled]="!otherProducer.checked" formControlName="producer">
+                  <mat-option *ngFor="let producer of producers" [value]="producer.id">
+                    {{ producer }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div> -->
+        <div>
+          <mat-form-field>
+            <mat-label>Vigencia</mat-label>
+            <mat-date-range-input [rangePicker]="lifePicker">
+              <input matStartDate placeholder="Inicio" formControlName="start"/>
+              <input matEndDate placeholder="Fin" formControlName="end"/>
+            </mat-date-range-input>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="lifePicker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #lifePicker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button mat-fab color="primary" [disabled]="insuredForm.valid">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="this.operation() == 2"></div>
+</div>

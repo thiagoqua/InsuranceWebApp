@@ -1,3 +1,14 @@
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav button{
+  font-size: 120%;
+  font-weight: 600;
+}
+
 .searcher{
   display: flex;
   flex-direction: column;
@@ -5,7 +16,21 @@
   align-items: center;
 }
 
+.searcher div{
+  width: 100%;
+  text-align: center;
+}
+
 .advice{
   color:chocolate;
   font-size:100px;
+  margin:0;
+}
+
+.form{
+  width: 50%;
+}
+
+.form + button{
+  margin-left: 5%;
 }

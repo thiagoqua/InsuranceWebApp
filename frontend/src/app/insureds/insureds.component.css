@@ -1,0 +1,30 @@
+div{
+    height: 500px;
+    width:100%;
+    overflow: auto;
+    position: relative;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead{
+    position: sticky;
+    top:0;
+    background-color: aliceblue;
+}
+
+tr{
+    margin-top:10%;
+}
+
+tr td, tr th{
+    text-align: center;
+    padding:5px;
+}
+
+.company-img{
+    max-width: 100px;
+}

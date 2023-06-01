@@ -1,11 +1,30 @@
+<nav>
+  <button mat-button routerLink="/administracion">
+    administrar
+  </button>
+  <button mat-button routerLink="/importar">
+    importar
+  </button>
+  <button mat-button>
+    cerrar sesión
+  </button>
+</nav>
 <div class="searcher">
-  <h1 *ngIf="usingMocks()" class="advice">Using Mocks</h1>
+  <h2 *ngIf="usingMocks()" class="advice">Using Mocks</h2>
   <div>
-    <input #searchInput type="text" placeholder="nombre/apellido del asegurado" 
-          (input)="resetInsureds($event)"/>
-    <input type="submit" (click)="makeSearch(searchInput.value)"/>
+    <mat-form-field class="form">
+      <mat-label>Asegurado</mat-label>
+      <input class="insured-input" #searchInput matInput type="text" 
+            (input)="resetInsureds($event)">
+      <button matSuffix *ngIf="searchInput.value" mat-icon-button aria-label="Clear" 
+              (click)="clearInput(searchInput)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" 
+            (click)="makeSearch(searchInput.value)">
+      <mat-icon>search</mat-icon>
+    </button>
   </div>
 </div>
-<div>
-  <app-insureds [insureds]="insureds$"></app-insureds>
-</div>
+<app-insureds [insureds]="insureds$"></app-insureds>

@@ -6,8 +6,7 @@ namespace InsuranceAPI.Models;
 
 public partial class DbInsuranceContext : DbContext
 {
-    public DbInsuranceContext()
-    {
+    public DbInsuranceContext(){
     }
 
     public DbInsuranceContext(DbContextOptions<DbInsuranceContext> options)

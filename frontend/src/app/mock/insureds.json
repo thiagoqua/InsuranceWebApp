@@ -3,6 +3,7 @@
     "id": 2,
     "firstname": "alejandra",
     "lastname": "lionetti",
+    "company":"https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png",
     "license": "444444",
     "folder": 1836,
     "life": "20-03 20-03",
@@ -12,14 +13,54 @@
     "cuit": "27-22932733-5",
     "producer": 1,
     "description": "hidrocarb",
-    "addressNavigation": null,
-    "phones": [],
-    "producerNavigation": null
+    "addressNavigation": {
+      "id": 1,
+      "street": "San Nicolás",
+      "number": "727",
+      "floor": null,
+      "departament": null,
+      "city": "Arroyo Seco",
+      "province": "Santa Fe",
+      "country": "Argentina"
+    },
+    "phones": [
+      {
+        "id": 1,
+        "insured": 2,
+        "number": "+5493411 55516",
+        "description": "padre - Gaston Edul"
+      },
+      {
+        "id": 5,
+        "insured": 2,
+        "number": "+5493411 55566",
+        "description": "madre - Monica Edul"
+      },
+      {
+        "id": 6,
+        "insured": 2,
+        "number": "+5493411 55576",
+        "description": "hermano - Carlo Edul"
+      },
+      {
+        "id": 7,
+        "insured": 2,
+        "number": "+5493411 55586",
+        "description": "prima - Margaret Edul"
+      }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
   },
   {
     "id": 3,
     "firstname": "jose hernestino",
     "lastname": "rivadavia",
+    "company":"https://www.eliasseguros.com.ar/images/logo-federacion.png",
     "license": "366666",
     "folder": 92,
     "life": "04-05 04-11",
@@ -29,14 +70,36 @@
     "cuit": null,
     "producer": 2,
     "description": "estuvo en la revolución industrial",
-    "addressNavigation": null,
-    "phones": [],
-    "producerNavigation": null
+    "addressNavigation": {
+      "id": 3,
+      "street": "Lionel Andrés Messi",
+      "number": "2022",
+      "floor": 4,
+      "departament": 86,
+      "city": "Rosario",
+      "province": "Santa Fe",
+      "country": "Argentina"
+    },
+    "phones": [
+      {
+        "id": 2,
+        "insured": 3,
+        "number": "+5493411 55526",
+        "description": "hermano - Eduardo Rivadavia"
+      }
+    ],
+    "producerNavigation": {
+      "id": 2,
+      "firstname": "ricky",
+      "lastname": "quaglia",
+      "joined": "2000-01-01T00:00:00"
+    }
   },
   {
     "id": 4,
     "firstname": "nicolas",
     "lastname": "latifi",
+    "company":"https://www.eliasseguros.com.ar/images/logo-federacion.png",
     "license": "DNF9999",
     "folder": 333,
     "life": "29-07 29-11",
@@ -46,14 +109,31 @@
     "cuit": null,
     "producer": 3,
     "description": "de todo menos piloto",
-    "addressNavigation": null,
-    "phones": [],
-    "producerNavigation": null
+    "addressNavigation": {
+      "id": 2,
+      "street": "Galvez",
+      "number": "32",
+      "floor": null,
+      "departament": null,
+      "city": "Arroyo Seco",
+      "province": "Santa Fe",
+      "country": "Argentina"
+    },
+    "phones": [
+      { "id": 3, "insured": 4, "number": "+5493411 55546", "description": null }
+    ],
+    "producerNavigation": {
+      "id": 3,
+      "firstname": "leo",
+      "lastname": "lionetti",
+      "joined": "1980-01-01T00:00:00"
+    }
   },
   {
     "id": 5,
     "firstname": "carlos",
     "lastname": "sainz",
+    "company":"https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png",
     "license": "CS555555",
     "folder": 55,
     "life": "30-07 30-01",
@@ -63,8 +143,29 @@
     "cuit": null,
     "producer": 1,
     "description": "capo",
-    "addressNavigation": null,
-    "phones": [],
-    "producerNavigation": null
+    "addressNavigation": {
+      "id": 4,
+      "street": "Av Cárcano",
+      "number": "343 bis",
+      "floor": null,
+      "departament": null,
+      "city": "Villa Carlos Paz",
+      "province": "Córdoba",
+      "country": "Argentina"
+    },
+    "phones": [
+      {
+        "id": 4,
+        "insured": 5,
+        "number": "+5493411 55556",
+        "description": "novia - La gran putísima"
+      }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
   }
 ]

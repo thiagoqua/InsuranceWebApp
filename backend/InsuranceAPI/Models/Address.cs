@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace InsuranceAPI.Models;
 
@@ -21,5 +22,6 @@ public partial class Address
 
     public string Country { get; set; } = null!;
 
+    [JsonIgnore]
     public virtual ICollection<Insured> Insureds { get; set; } = new List<Insured>();
 }
