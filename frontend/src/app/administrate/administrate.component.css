@@ -2,13 +2,6 @@ div{
     text-align: center;
 }
 
-mat-icon{
-    margin-top:50%;
-    font-size: 50px;
-    height: 100px;
-    width: 100px;
-}
-
 form{
     display:flex;
     flex-direction: column;
@@ -17,6 +10,13 @@ form{
 
 mat-form-field{
     width: 80%;
+}
+
+.icon-bigger{
+    margin-top:50%;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
 }
 
 .section{
@@ -54,4 +54,8 @@ mat-form-field{
     display:flex;
     flex-direction: row;
     gap:1.5rem;
+}
+
+.error-advice{
+    color: rgb(243, 87, 87);
 }

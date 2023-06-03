@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InsuranceAPI.Models;
 
 public partial class Insured
 {
-    public int Id { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public long Id { get; set; }
 
     public string Firstname { get; set; } = null!;
 
@@ -19,17 +21,21 @@ public partial class Insured
 
     public DateTime Born { get; set; }
 
-    public int Address { get; set; }
+    public long Address { get; set; }
 
     public string Dni { get; set; } = null!;
 
     public string? Cuit { get; set; }
 
-    public int Producer { get; set; }
+    public long Producer { get; set; }
 
     public string? Description { get; set; }
 
+    public long Company { get; set; }
+
     public virtual Address AddressNavigation { get; set; } = null!;
+
+    public virtual Company CompanyNavigation { get; set; } = null!;
 
     public virtual ICollection<Phone> Phones { get; set; } = new List<Phone>();
 

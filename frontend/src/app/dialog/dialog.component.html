@@ -1,0 +1,29 @@
+<div *ngIf="display == 1 && status">
+    <h1 mat-dialog-title>Usuario creado exitosamente!</h1>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close routerLink="/">
+            Volver a la pantalla principal
+        </button>
+    </div>
+</div>
+
+<div *ngIf="display == 1 && !status">
+    <h1 mat-dialog-title>Oops! hubo un error al crear el usuario.</h1>
+    <p mat-dialog-content>Contactese con los desarrolladores</p>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close routerLink="/">
+            Volver a la pantalla principal
+        </button>
+    </div>
+</div>
+
+<div *ngIf="display == 2">
+    <h1 mat-dialog-title>Delete file</h1>
+    <div mat-dialog-content>
+    Would you like to delete cat.jpeg?
+    </div>
+    <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+    </div>
+</div>

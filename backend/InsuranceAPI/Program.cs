@@ -21,16 +21,23 @@ builder.Services.AddScoped<IInsuredRepository, InsuredRepository>();
 builder.Services.AddScoped<IAddressRepository,AddressRepository>();
 builder.Services.AddScoped<IPhoneRepository, PhoneRepository>();
 builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 //cors
 builder.Services.AddCors(opt => {
-    opt.AddPolicy("angular_origin",policy =>
-                          policy.WithOrigins("http://localhost:4200")
-                          );
+    opt.AddPolicy("everything", policy => policy.AllowAnyOrigin()
+                                                .AllowAnyHeader()
+                                                .AllowAnyMethod()
+                                                );
 });
 
 builder.Services.AddControllers().AddJsonOptions(opt => 
     opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+);
+
+builder.Services.AddControllers(opt =>
+    opt.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true
 );
 
 var app = builder.Build();
@@ -43,7 +50,7 @@ if (app.Environment.IsDevelopment()){
 
 app.UseAuthorization();
 
-app.UseCors("angular_origin");
+app.UseCors("everything");
 
 app.MapControllers();
 

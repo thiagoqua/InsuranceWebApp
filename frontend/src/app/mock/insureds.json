@@ -3,7 +3,6 @@
     "id": 2,
     "firstname": "alejandra",
     "lastname": "lionetti",
-    "company":"https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png",
     "license": "444444",
     "folder": 1836,
     "life": "20-03 20-03",
@@ -13,6 +12,7 @@
     "cuit": "27-22932733-5",
     "producer": 1,
     "description": "hidrocarb",
+    "company": 1,
     "addressNavigation": {
       "id": 1,
       "street": "San Nicolás",
@@ -22,6 +22,11 @@
       "city": "Arroyo Seco",
       "province": "Santa Fe",
       "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 1,
+      "name": "Cooperación Seguros",
+      "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
     },
     "phones": [
       {
@@ -60,7 +65,6 @@
     "id": 3,
     "firstname": "jose hernestino",
     "lastname": "rivadavia",
-    "company":"https://www.eliasseguros.com.ar/images/logo-federacion.png",
     "license": "366666",
     "folder": 92,
     "life": "04-05 04-11",
@@ -70,6 +74,7 @@
     "cuit": null,
     "producer": 2,
     "description": "estuvo en la revolución industrial",
+    "company": 2,
     "addressNavigation": {
       "id": 3,
       "street": "Lionel Andrés Messi",
@@ -79,6 +84,11 @@
       "city": "Rosario",
       "province": "Santa Fe",
       "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
     },
     "phones": [
       {
@@ -99,7 +109,6 @@
     "id": 4,
     "firstname": "nicolas",
     "lastname": "latifi",
-    "company":"https://www.eliasseguros.com.ar/images/logo-federacion.png",
     "license": "DNF9999",
     "folder": 333,
     "life": "29-07 29-11",
@@ -109,6 +118,7 @@
     "cuit": null,
     "producer": 3,
     "description": "de todo menos piloto",
+    "company": 2,
     "addressNavigation": {
       "id": 2,
       "street": "Galvez",
@@ -118,6 +128,11 @@
       "city": "Arroyo Seco",
       "province": "Santa Fe",
       "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
     },
     "phones": [
       { "id": 3, "insured": 4, "number": "+5493411 55546", "description": null }
@@ -133,7 +148,6 @@
     "id": 5,
     "firstname": "carlos",
     "lastname": "sainz",
-    "company":"https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png",
     "license": "CS555555",
     "folder": 55,
     "life": "30-07 30-01",
@@ -143,6 +157,7 @@
     "cuit": null,
     "producer": 1,
     "description": "capo",
+    "company": 1,
     "addressNavigation": {
       "id": 4,
       "street": "Av Cárcano",
@@ -153,6 +168,11 @@
       "province": "Córdoba",
       "country": "Argentina"
     },
+    "companyNavigation": {
+      "id": 1,
+      "name": "Cooperación Seguros",
+      "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+    },
     "phones": [
       {
         "id": 4,
@@ -160,6 +180,357 @@
         "number": "+5493411 55556",
         "description": "novia - La gran putísima"
       }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 9,
+    "firstname": "mac",
+    "lastname": "vergastappen",
+    "license": "113311",
+    "folder": 33,
+    "life": "04/06-30/06",
+    "born": "2005-06-03T00:00:00",
+    "address": 10,
+    "dni": "113311  ",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 10,
+      "street": "red bull",
+      "number": "1",
+      "floor": null,
+      "departament": null,
+      "city": "milton keys",
+      "province": "inglaterra",
+      "country": "Brasil"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 0, "insured": 9, "number": "1133113311", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 11,
+    "firstname": "mac",
+    "lastname": "vergastappen",
+    "license": "113311",
+    "folder": 33,
+    "life": "04/06-30/06",
+    "born": "2005-06-03T00:00:00",
+    "address": 12,
+    "dni": "113311  ",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 12,
+      "street": "red bull",
+      "number": "1",
+      "floor": null,
+      "departament": null,
+      "city": "milton keys",
+      "province": "inglaterra",
+      "country": "Brasil"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 8, "insured": 11, "number": "1133113311", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 12,
+    "firstname": "mac",
+    "lastname": "vergastappen",
+    "license": "113311",
+    "folder": 33,
+    "life": "04/06-30/06",
+    "born": "2005-06-03T00:00:00",
+    "address": 13,
+    "dni": "113311  ",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 13,
+      "street": "red bull",
+      "number": "1",
+      "floor": null,
+      "departament": null,
+      "city": "milton keys",
+      "province": "inglaterra",
+      "country": "Brasil"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 9, "insured": 12, "number": "1133113311", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 13,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 14,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 14,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 10, "insured": 13, "number": "3412233", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 14,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 15,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 15,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 11, "insured": 14, "number": "3412233", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 15,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 16,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 16,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 12, "insured": 15, "number": "3412233", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 16,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 17,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 17,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 13, "insured": 16, "number": "3412233", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 17,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 18,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 18,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 14, "insured": 17, "number": "3412233", "description": "" }
+    ],
+    "producerNavigation": {
+      "id": 1,
+      "firstname": "tiki",
+      "lastname": "quaglia",
+      "joined": "2023-05-01T00:00:00"
+    }
+  },
+  {
+    "id": 18,
+    "firstname": "pepe",
+    "lastname": "argento",
+    "license": "PP-ARG",
+    "folder": 11,
+    "life": "12/06-30/06",
+    "born": "2005-06-01T00:00:00",
+    "address": 19,
+    "dni": "20055002",
+    "cuit": "",
+    "producer": 1,
+    "description": "",
+    "company": 2,
+    "addressNavigation": {
+      "id": 19,
+      "street": "bs as",
+      "number": "2005",
+      "floor": null,
+      "departament": null,
+      "city": "buenos aires",
+      "province": "buenos aires",
+      "country": "Argentina"
+    },
+    "companyNavigation": {
+      "id": 2,
+      "name": "Federación Patronal",
+      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+    },
+    "phones": [
+      { "id": 15, "insured": 18, "number": "3412233", "description": "" }
     ],
     "producerNavigation": {
       "id": 1,

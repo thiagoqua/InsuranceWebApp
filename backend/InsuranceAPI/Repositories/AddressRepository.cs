@@ -1,10 +1,14 @@
 ﻿using InsuranceAPI.Models;
+using System.Data.Common;
+using System.Net;
 
 namespace InsuranceAPI.Repositories {
     public interface IAddressRepository {
-        List<Address> getAll();
-        Address getById(int id);
-        List<Address> getByIds(List<int> ids);
+        public List<Address> getAll();
+        public Address getById(long id);
+        public List<Address> getByIds(List<long> ids);
+        public void create(Address address);
+        public bool commit();
     }
 
     public class AddressRepository : IAddressRepository {
@@ -14,19 +18,33 @@ namespace InsuranceAPI.Repositories {
             _context = context;
         }
 
+        public void create(Address address) {
+            _context.Addresses.Add(address);
+        }
+
+        public bool commit() {
+            try{
+                _context.SaveChanges();
+                return true;
+            } catch(DbException ex){
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
         public List<Address> getAll() {
             return _context.Addresses.ToList();
         }
 
-        public Address getById(int id) { 
+        public Address getById(long id) { 
             return (from addr in _context.Addresses
                     where addr.Id == id
                     select addr).First();
         }
 
-        public List<Address> getByIds(List<int> ids) {
+        public List<Address> getByIds(List<long> ids) {
             List<Address> ret = new List<Address>();
-            foreach(int id in ids)
+            foreach(long id in ids)
                 ret.Add(getById(id));
             return ret;
         }

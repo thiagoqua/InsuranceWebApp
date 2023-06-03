@@ -1,11 +1,14 @@
 ﻿using InsuranceAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace InsuranceAPI.Repositories {
     public interface IInsuredRepository {
         public List<Insured> getAll();
         public List<Insured> search(string query);
-        public Insured findById(int id);
+        public Insured findById(long id);
+        public void create(Insured insured);
+        public bool commit();
     }
 
     public class InsuredRepository : IInsuredRepository{
@@ -20,6 +23,7 @@ namespace InsuranceAPI.Repositories {
                 .Include(ins => ins.AddressNavigation)
                 .Include(ins => ins.ProducerNavigation)
                 .Include(ins => ins.Phones)
+                .Include(ins => ins.CompanyNavigation)
                 .ToList();
         }
 
@@ -34,15 +38,32 @@ namespace InsuranceAPI.Repositories {
                     .Include(ins => ins.AddressNavigation)
                     .Include(ins => ins.ProducerNavigation)
                     .Include(ins => ins.Phones)
+                    .Include(ins => ins.CompanyNavigation)
                     .ToList();
         }
 
-        public Insured findById(int id) {
+        public Insured findById(long id) {
             return _context.Insureds
                     .Include(i => i.AddressNavigation)
                     .Include(ins => ins.AddressNavigation)
                     .Include(ins => ins.ProducerNavigation)
+                    .Include(ins => ins.CompanyNavigation)
                     .FirstOrDefault(i => i.Id == id);
+        }
+
+        public void create(Insured newOne) {
+            _context.Insureds.Add(newOne);
+        }
+
+        public bool commit() {
+            try {
+                _context.SaveChanges();
+                return true;
+            }
+            catch(DbException ex){
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
     }
 }

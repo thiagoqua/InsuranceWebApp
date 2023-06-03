@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using InsuranceAPI.Services;
+using InsuranceAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace InsuranceAPI.Controllers {
+    [EnableCors("everything")]
     [Route("api/insured")]
     [ApiController]
     public class InsuredController : ControllerBase {
@@ -32,10 +35,19 @@ namespace InsuranceAPI.Controllers {
                     NotFound();
         }
 
+        [HttpPost]
+        [Route("new")]
+        public IActionResult create([FromBody] Insured insured) {
+            if(insured == null)
+                return BadRequest();
+            bool ret = _service.create(insured);
+            return ret ? Ok() : StatusCode(500);
+        }
+
         [HttpGet]
         [Route("test")]
         public IActionResult test() {
-            return Ok("funca");
+            return Ok("funca?");
         }
     }
 }

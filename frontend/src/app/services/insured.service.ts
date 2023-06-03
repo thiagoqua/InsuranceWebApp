@@ -20,4 +20,8 @@ export class InsuredService {
     const param:string = query.replace(' ','+');
     return this.api.get<Insured[]>(`${this.API_URL}/api/insured/search?query=${param}`);
   }
+
+  create(insured:Insured):Observable<Response>{
+    return this.api.post<Response>(`${this.API_URL}/api/insured/new`,insured);
+  }
 }

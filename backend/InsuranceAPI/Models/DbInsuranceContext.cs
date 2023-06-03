@@ -6,7 +6,8 @@ namespace InsuranceAPI.Models;
 
 public partial class DbInsuranceContext : DbContext
 {
-    public DbInsuranceContext(){
+    public DbInsuranceContext()
+    {
     }
 
     public DbInsuranceContext(DbContextOptions<DbInsuranceContext> options)
@@ -15,6 +16,8 @@ public partial class DbInsuranceContext : DbContext
     }
 
     public virtual DbSet<Address> Addresses { get; set; }
+
+    public virtual DbSet<Company> Companies { get; set; }
 
     public virtual DbSet<Insured> Insureds { get; set; }
 
@@ -53,6 +56,21 @@ public partial class DbInsuranceContext : DbContext
                 .HasColumnName("street");
         });
 
+        modelBuilder.Entity<Company>(entity =>
+        {
+            entity.ToTable("company");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Logo)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("logo");
+            entity.Property(e => e.Name)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("name");
+        });
+
         modelBuilder.Entity<Insured>(entity =>
         {
             entity.ToTable("insured");
@@ -62,6 +80,7 @@ public partial class DbInsuranceContext : DbContext
             entity.Property(e => e.Born)
                 .HasColumnType("date")
                 .HasColumnName("born");
+            entity.Property(e => e.Company).HasColumnName("company");
             entity.Property(e => e.Cuit)
                 .HasMaxLength(15)
                 .IsUnicode(false)
@@ -98,6 +117,11 @@ public partial class DbInsuranceContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_address_insured");
 
+            entity.HasOne(d => d.CompanyNavigation).WithMany(p => p.Insureds)
+                .HasForeignKey(d => d.Company)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_company_insured");
+
             entity.HasOne(d => d.ProducerNavigation).WithMany(p => p.Insureds)
                 .HasForeignKey(d => d.Producer)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -108,9 +132,7 @@ public partial class DbInsuranceContext : DbContext
         {
             entity.ToTable("phone");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Description)
                 .HasMaxLength(30)
                 .IsUnicode(false)

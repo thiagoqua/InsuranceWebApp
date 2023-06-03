@@ -14,13 +14,15 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
 import { ImportComponent } from './import/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     InsuredsComponent,
     LoginComponent,
     AdministrateComponent,
-    ImportComponent
+    ImportComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [
     {provide: DateAdapter, useClass: AppDateAdapter}

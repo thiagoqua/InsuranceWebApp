@@ -1,11 +1,12 @@
 import { Address } from "./Address";
+import { Company } from "./Company";
 import { Phone } from "./Phone";
 import { Producer } from "./Producer";
 
 export class Insured{
     public firstname:string;
     public lastname:string;
-    public company:string;
+    public company:number;
     public license:string;
     public folder:number;
     public life:string;
@@ -16,6 +17,7 @@ export class Insured{
     public phones:Phone[];
     public address?:number;
     public producerNavigation?:Producer;
+    public companyNavigation?:Company;
     public description?:string;
     public cuit?:string;
     public id?:number;
@@ -23,7 +25,7 @@ export class Insured{
     constructor(
         firstname:string,
         lastname:string,
-        company:string,
+        company:number,
         license:string,
         folder:number,
         life:string,

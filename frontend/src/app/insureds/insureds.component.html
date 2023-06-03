@@ -21,7 +21,7 @@
       <tr *ngFor="let insured of insureds | async"
           [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}">
         <td>{{insured.firstname + " " + insured.lastname}}</td>
-        <td><img src="{{insured.company}}" class="company-img"/></td>
+        <td><img src="{{insured.companyNavigation!.logo}}" class="company-img"/></td>
         <td>{{insured.license}}</td>
         <td>{{insured.folder}}</td>
         <td>{{insured.life}}</td>

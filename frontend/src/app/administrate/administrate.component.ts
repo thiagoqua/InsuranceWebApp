@@ -1,12 +1,17 @@
 import { Component, WritableSignal, signal } from '@angular/core';
 import { Phone } from '../models/Phone';
-import {DateAdapter, NativeDateAdapter, MAT_DATE_FORMATS} from "@angular/material/core";
+import { NativeDateAdapter } from "@angular/material/core";
 import * as moment from 'moment';
-import { ProducerService } from '../services/producer.service';
 import { Producer } from '../models/Producer';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Insured } from '../models/Insured';
 import { Address } from '../models/Address';
+import { Company } from '../models/Company';
+import { CompanyService } from '../services/company.service';
+import * as companiesMock from '../mock/companies.json';
+import { InsuredService } from '../services/insured.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-administrate',
@@ -15,30 +20,42 @@ import { Address } from '../models/Address';
 })
 
 export class AdministrateComponent {
+  public usingMocks:WritableSignal<boolean> = signal(false);
   public userLogged:Producer;
   public insuredForm:FormGroup;
   public operation:WritableSignal<number>;
   public countries:string[];
   public maxDate:Date;
   public phones:Phone[];
-  public producers:Producer[];
-  public company:string;
+  public companies:Company[];
 
-  constructor(private producerService:ProducerService){
-    this.userLogged = new Producer('tiki','quaglia',new Date(),7);
+  constructor(private insuredService:InsuredService,
+              private companyService:CompanyService,
+              public dialog:MatDialog){
+    this.userLogged = new Producer('tiki','quaglia',new Date(),1);
     const today:Date = new Date();
     this.operation = signal(0);
     this.countries  = ['Argentina','Brasil','Uruguay','Paraguay','Chile'];
     this.phones = [];
     this.maxDate = new Date(today.getFullYear() - 18,today.getMonth(),today.getDay());
-    this.producers = [];
-    this.producerService.getAll().subscribe((data:Producer[]) => this.producers = data);
-    this.company = '';
+    this.companies = [];
+    this.companyService.getAll().subscribe({
+      next: (data:Company[]) => this.companies = data,
+      error: _ => {
+          let mocks:Company[] = [];
+          Object.assign(mocks,companiesMock)
+          this.usingMocks.set(true);
+          this.companies = mocks;
+      }
+    });
+
     
     this.insuredForm = new FormGroup({
       firstname: new FormControl('',Validators.required),
       lastname: new FormControl('',Validators.required),
       born: new FormControl('',Validators.required),
+      company: new FormControl('',Validators.required),
+      phones: new FormControl('',Validators.required),
       description: new FormControl(''),
       dni: new FormControl('',Validators.required),
       cuit: new FormControl(''),
@@ -56,29 +73,22 @@ export class AdministrateComponent {
     });
   }
   
-  addInsured():void{ 
-    this.operation.set(1);
-  }
-
-  removeInsured():void{
-    this.operation.set(2);
-  }
-
   addPhone(number:HTMLInputElement,description:HTMLInputElement){
     this.phones.push(new Phone(number.value,description.value));
     number.value = '';
     description.value = '';
+    this.insuredForm.get('phones')?.setErrors(null);
   }
 
   handleSubmit(){
     const newInsured:Insured = new Insured(
       this.insuredForm.controls['firstname'].value,
       this.insuredForm.controls['lastname'].value,
-      this.company,
+      this.insuredForm.controls['company'].value,
       this.insuredForm.controls['license'].value,
       this.insuredForm.controls['folder'].value,
       this.formatLife(),
-      this.insuredForm.controls['born'].value,
+      this.insuredForm.controls['born'].value as Date,
       this.formatAddress(),
       this.insuredForm.controls['dni'].value,
       this.userLogged.id!,
@@ -87,25 +97,46 @@ export class AdministrateComponent {
       undefined,
       this.insuredForm.controls['description'].value,
       this.insuredForm.controls['cuit'].value
-    )
+    );
+    this.insuredService.create(newInsured).subscribe({
+      next: res => this.openDialog(true),
+      error: error => this.openDialog(false)
+    });
   }
 
   formatLife():string{
-    const start:Date = this.insuredForm.controls['start'].value;
-    const end:Date = this.insuredForm.controls['end'].value;
-    return `${start.toLocaleDateString('en-AU')}-${end.toLocaleDateString('en-AU')}`;
+    let start:string = new Date(this.insuredForm.controls['start'].value)
+      .toLocaleDateString('en-AU'); // format dd/mm/yyyy
+    let end:string = new Date(this.insuredForm.controls['end'].value)
+      .toLocaleDateString('en-AU');
+    start = start.split('/',2).join('/');
+    end = end.split('/',2).join('/');
+    return `${start}-${end}`;
   }
 
   formatAddress():Address{
+    const floor:number|undefined = this.insuredForm.controls['floor'].value != '' 
+      ? this.insuredForm.controls['floor'].value
+      : undefined;
+    const depto:number|undefined = this.insuredForm.controls['departament'].value != ''
+      ? this.insuredForm.controls['departament'].value
+      : undefined;
     return new Address(
       this.insuredForm.controls['street'].value,
       this.insuredForm.controls['number'].value,
       this.insuredForm.controls['city'].value,
       this.insuredForm.controls['province'].value,
       this.insuredForm.controls['country'].value,
-      this.insuredForm.controls['floor'].value,
-      this.insuredForm.controls['departament'].value
+      floor,
+      depto
     );
+  }
+
+  openDialog(status:boolean): void {
+    this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {display:1,status:status}
+    });
   }
 }
 
