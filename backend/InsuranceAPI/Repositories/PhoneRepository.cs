@@ -11,6 +11,8 @@ namespace InsuranceAPI.Repositories {
         public List<Phone> getByInsureds(List<long> insuredIds);
         public void create(Phone phone);
         public void createMultiple(List<Phone> phones);
+        public void delete(long id);
+        public void deleteByInsured(long insuredId);
         public bool commit();
     }
     
@@ -67,6 +69,17 @@ namespace InsuranceAPI.Repositories {
             foreach(long id in insuredIds)
                 ret.Concat(getByInsured(id));
             return ret;
+        }
+
+        public void delete(long id) {
+            _context.Phones.Remove(getById(id));
+        }
+
+        public void deleteByInsured(long insuredId) {
+            List<Phone> toDelete = (from phone in _context.Phones
+                                    where phone.Insured == insuredId
+                                    select phone).ToList();
+            _context.Phones.RemoveRange(toDelete);
         }
     }
 }

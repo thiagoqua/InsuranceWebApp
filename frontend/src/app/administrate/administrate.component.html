@@ -1,33 +1,16 @@
 <div style="height: 100%">
   <div class="button-container">
-    <button
-      mat-fab
-      [color]="'warn'"
-      routerLink="/"
-    >
+    <button mat-fab [color]="'warn'" routerLink="/">
       <mat-icon class="icon-bigger">home</mat-icon>
     </button>
-    <button
-      #addbutton
-      id="add-button"
-      mat-fab
-      class="pepe"
-      [color]="this.operation() == 1 ? 'secondary' : 'primary'"
-      (click)="this.operation.set(1)"
-    >
-      <mat-icon class="icon-bigger">add</mat-icon>
-    </button>
-    <button
-      id="remove-button"
-      mat-fab
-      [color]="this.operation() == 2 ? 'secondary' : 'primary'"
-      (click)="this.operation.set(2)"
-    >
-      <mat-icon class="icon-bigger">delete_forever</mat-icon>
-    </button>
   </div>
-  <div *ngIf="this.operation() == 1">
-    <h1 *ngIf="usingMocks()" style="color:chocolate;font-size:100px;margin:0;">Using mocks</h1>
+  <div>
+    <h1
+      *ngIf="usingMocks()"
+      style="color: chocolate; font-size: 100px; margin: 0"
+    >
+      Using mocks
+    </h1>
     <form [formGroup]="insuredForm" (ngSubmit)="handleSubmit()">
       <h1>Datos personales</h1>
       <div class="section">
@@ -46,8 +29,12 @@
         <div>
           <mat-form-field>
             <mat-label>Fecha de nacimiento</mat-label>
-            <input matInput [matDatepicker]="bornPicker" [max]="maxDate"
-                    formControlName="born"/>
+            <input
+              matInput
+              [matDatepicker]="bornPicker"
+              [max]="maxDate"
+              formControlName="born"
+            />
             <mat-datepicker-toggle
               matIconSuffix
               [for]="bornPicker"
@@ -76,35 +63,48 @@
         <div class="inside-items">
           <mat-form-field>
             <mat-label>Tel</mat-label>
-            <input matInput #number type="text"/>
+            <input matInput #number type="text" />
           </mat-form-field>
         </div>
         <div class="inside-items">
           <div class="flexdiv">
             <mat-form-field>
-              <mat-label
-                >Descripción tel (opcional)</mat-label
-              >
+              <mat-label>Descripción tel (opcional)</mat-label>
               <input matInput #desc type="text" />
             </mat-form-field>
             <button
               mat-fab
               color="warn"
               (click)="addPhone(number, desc)"
-              [disabled]="number.value == '' || phones.length > 2"
+              [disabled]="number.value == '' ||
+                          (phones.length > 2 && this.editingPhone() == null)"
             >
-              <mat-icon>library_add</mat-icon>
+              <mat-icon>
+                {{editingPhone() != null ? "edit" : "library_add"}}
+              </mat-icon>
+            </button>
+            <button mat-fab *ngIf="editingPhone() != null"
+                    (click)="deletePhone(number,desc)">
+              <mat-icon>delete</mat-icon>
             </button>
           </div>
         </div>
         <mat-list>
-          <mat-list-item *ngFor="let phone of phones">
+          <mat-label>Presione para editar</mat-label>
+          <mat-list-item
+            class="phone-list-item"
+            style="cursor: pointer;"
+            *ngFor="let phone of phones"
+            (click)="editPhone(phone, number, desc)"
+          >
             <span matListItemTitle>{{ phone.number }}</span>
             <span matListItemLine>{{ phone.description }}</span>
           </mat-list-item>
         </mat-list>
       </div>
-      <p *ngIf="phones.length == 0" class="error-advice">Por favor, ingrese al menos un teléfono</p>
+      <p *ngIf="phones.length == 0" class="error-advice">
+        Por favor, ingrese al menos un teléfono
+      </p>
       <h1>Dirección</h1>
       <div class="section">
         <div>
@@ -160,7 +160,10 @@
           <mat-form-field>
             <mat-label>Compañía</mat-label>
             <mat-select formControlName="company">
-              <mat-option *ngFor="let company of companies" [value]="company.id">
+              <mat-option
+                *ngFor="let company of companies"
+                [value]="company.id"
+              >
                 {{ company.name }}
               </mat-option>
             </mat-select>
@@ -178,34 +181,16 @@
             <input matInput type="number" formControlName="folder" />
           </mat-form-field>
         </div>
-        <!-- <div>
-          <div class="inside-items">
-          <h4>Productor</h4>
-            <div class="flexdiv">
-              <mat-checkbox #meProducer type="checkbox" [disabled]="otherProducer.checked"
-                            formControlName="producer" [value]="userLogged.id">
-                <mat-label>Yo</mat-label>
-              </mat-checkbox>
-              <mat-checkbox #otherProducer type="checkbox" [disabled]="meProducer.checked">
-                <mat-label>Otro</mat-label>
-              </mat-checkbox>
-              <mat-form-field>
-                <mat-label>Productor</mat-label>
-                <mat-select [disabled]="!otherProducer.checked" formControlName="producer">
-                  <mat-option *ngFor="let producer of producers" [value]="producer.id">
-                    {{ producer }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-        </div> -->
         <div>
           <mat-form-field>
             <mat-label>Vigencia</mat-label>
             <mat-date-range-input [rangePicker]="lifePicker">
-              <input matStartDate placeholder="Inicio" formControlName="start"/>
-              <input matEndDate placeholder="Fin" formControlName="end"/>
+              <input
+                matStartDate
+                placeholder="Inicio"
+                formControlName="start"
+              />
+              <input matEndDate placeholder="Fin" formControlName="end" />
             </mat-date-range-input>
             <mat-datepicker-toggle
               matIconSuffix
@@ -222,5 +207,4 @@
       </div>
     </form>
   </div>
-  <div *ngIf="this.operation() == 2"></div>
 </div>

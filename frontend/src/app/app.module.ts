@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
 import { ImportComponent } from './import/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
@@ -52,7 +53,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatDatepickerModule,
     MatSelectModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [
     {provide: DateAdapter, useClass: AppDateAdapter}

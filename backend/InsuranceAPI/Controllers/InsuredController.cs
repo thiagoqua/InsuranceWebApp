@@ -27,8 +27,8 @@ namespace InsuranceAPI.Controllers {
         }
 
         [HttpGet]
-        [Route("id/{id:int}")]
-        public IActionResult getById(int id) {
+        [Route("{id:long}")]
+        public IActionResult getById(long id) {
             var ret = _service.getById(id);
             return ret != null ?
                     Ok(ret) : 
@@ -41,6 +41,22 @@ namespace InsuranceAPI.Controllers {
             if(insured == null)
                 return BadRequest();
             bool ret = _service.create(insured);
+            return ret ? Ok() : StatusCode(500);
+        }
+
+        [HttpPut]
+        [Route("update")]
+        public IActionResult update([FromBody] Insured insured) {
+            if(insured == null)
+                return BadRequest();
+            bool ret = _service.update(insured);
+            return ret ? Ok() : StatusCode(500);
+        }
+
+        [HttpDelete]
+        [Route("delete/{id:long}")]
+        public IActionResult delete(long id) {
+            bool ret = _service.delete(id);
             return ret ? Ok() : StatusCode(500);
         }
 

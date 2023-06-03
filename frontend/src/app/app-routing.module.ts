@@ -9,7 +9,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'iniciar',component:LoginComponent},
   {path:'importar',component:ImportComponent},
-  {path:'administracion',component:AdministrateComponent}
+  {path:'administracion',component:AdministrateComponent},
+  {path:'administracion/:insuredId',component:AdministrateComponent}
 ];
 
 @NgModule({

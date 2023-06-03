@@ -8,6 +8,8 @@ namespace InsuranceAPI.Repositories {
         public List<Insured> search(string query);
         public Insured findById(long id);
         public void create(Insured insured);
+        public void update(Insured insured);
+        public void delete(long id);
         public bool commit();
     }
 
@@ -48,6 +50,7 @@ namespace InsuranceAPI.Repositories {
                     .Include(ins => ins.AddressNavigation)
                     .Include(ins => ins.ProducerNavigation)
                     .Include(ins => ins.CompanyNavigation)
+                    .Include(ins => ins.Phones)
                     .FirstOrDefault(i => i.Id == id);
         }
 
@@ -64,6 +67,16 @@ namespace InsuranceAPI.Repositories {
                 Console.WriteLine(ex.Message);
                 return false;
             }
+        }
+
+        public void update(Insured insured) {
+            _context.Insureds.Update(insured);
+        }
+
+        public void delete(long id) {
+            Insured inCuestion = findById(id);
+            inCuestion.Phones.Clear();
+            _context.Insureds.Remove(inCuestion);
         }
     }
 }

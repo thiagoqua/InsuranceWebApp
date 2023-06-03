@@ -59,3 +59,8 @@ mat-form-field{
 .error-advice{
     color: rgb(243, 87, 87);
 }
+
+.phone-list-item:hover{
+    cursor:pointer;
+    background-color: rgb(201, 201, 255);
+}

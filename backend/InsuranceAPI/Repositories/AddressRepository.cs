@@ -8,6 +8,7 @@ namespace InsuranceAPI.Repositories {
         public Address getById(long id);
         public List<Address> getByIds(List<long> ids);
         public void create(Address address);
+        public void delete(long id);
         public bool commit();
     }
 
@@ -47,6 +48,10 @@ namespace InsuranceAPI.Repositories {
             foreach(long id in ids)
                 ret.Add(getById(id));
             return ret;
+        }
+
+        public void delete(long id) {
+            _context.Addresses.Remove(getById(id));
         }
     }
 }
