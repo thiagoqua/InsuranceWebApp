@@ -17,6 +17,8 @@ public partial class DbInsuranceContext : DbContext
 
     public virtual DbSet<Address> Addresses { get; set; }
 
+    public virtual DbSet<Admin> Admins { get; set; }
+
     public virtual DbSet<Company> Companies { get; set; }
 
     public virtual DbSet<Insured> Insureds { get; set; }
@@ -54,6 +56,34 @@ public partial class DbInsuranceContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("street");
+        });
+
+        modelBuilder.Entity<Admin>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC0720877DAA");
+
+            entity.ToTable("admin");
+
+            entity.Property(e => e.Password)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("password");
+            entity.Property(e => e.Producer)
+                .HasDefaultValueSql("((1))")
+                .HasColumnName("producer");
+            entity.Property(e => e.Token)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("token");
+            entity.Property(e => e.Username)
+                .HasMaxLength(15)
+                .IsUnicode(false)
+                .HasColumnName("username");
+
+            entity.HasOne(d => d.ProducerNavigation).WithMany(p => p.Admins)
+                .HasForeignKey(d => d.Producer)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_admin_producer");
         });
 
         modelBuilder.Entity<Company>(entity =>

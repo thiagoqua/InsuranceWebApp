@@ -1,8 +1,10 @@
 ﻿using InsuranceAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceAPI.Controllers {
+    [Authorize]
     [EnableCors("everything")]
     [Route("api/company")]
     [ApiController]

@@ -6,7 +6,7 @@ namespace InsuranceAPI.Repositories {
     public interface IInsuredRepository {
         public List<Insured> getAll();
         public List<Insured> search(string query);
-        public Insured findById(long id);
+        public Insured? findById(long id);
         public void create(Insured insured);
         public void update(Insured insured);
         public void delete(long id);
@@ -44,7 +44,7 @@ namespace InsuranceAPI.Repositories {
                     .ToList();
         }
 
-        public Insured findById(long id) {
+        public Insured? findById(long id) {
             return _context.Insureds
                     .Include(i => i.AddressNavigation)
                     .Include(ins => ins.AddressNavigation)
@@ -74,9 +74,11 @@ namespace InsuranceAPI.Repositories {
         }
 
         public void delete(long id) {
-            Insured inCuestion = findById(id);
-            inCuestion.Phones.Clear();
-            _context.Insureds.Remove(inCuestion);
+            Insured? inCuestion = findById(id);
+            if(inCuestion != null){
+                inCuestion.Phones.Clear();
+                _context.Insureds.Remove(inCuestion);
+            }
         }
     }
 }

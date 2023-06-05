@@ -6,7 +6,7 @@ namespace InsuranceAPI.Services {
     public interface IInsuredService {
         public List<Insured> getAll();
         public List<Insured> getFromSearch(string query);
-        public Insured getById(long id);
+        public Insured? getById(long id);
         public bool create(Insured insured);
         public bool update(Insured insured);
         public bool delete(long id);
@@ -33,7 +33,7 @@ namespace InsuranceAPI.Services {
              return _insuredRepo.search(query);
         }
 
-        public Insured getById(long id) {
+        public Insured? getById(long id) {
             return _insuredRepo.findById(id);
         }
 
@@ -61,11 +61,15 @@ namespace InsuranceAPI.Services {
         }
 
         public bool delete(long id) {
-            Insured inCuestion = getById(id);
-            _phoneRepo.deleteByInsured(id);
-            _insuredRepo.delete(id);
-            _addressRepo.delete(inCuestion.Address);
-            return _insuredRepo.commit();
+            Insured? inCuestion = getById(id);
+            bool ret = false;
+            if(inCuestion != null){
+                _phoneRepo.deleteByInsured(id);
+                _insuredRepo.delete(id);
+                _addressRepo.delete(inCuestion.Address);
+                ret = _insuredRepo.commit();
+            }
+            return ret;
         }
     }
 }

@@ -2,7 +2,6 @@ import { Component, WritableSignal, signal } from '@angular/core';
 import { Phone } from '../models/Phone';
 import { NativeDateAdapter } from "@angular/material/core";
 import * as moment from 'moment';
-import { Producer } from '../models/Producer';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Insured } from '../models/Insured';
 import { Address } from '../models/Address';
@@ -13,6 +12,8 @@ import { InsuredService } from '../services/insured.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ActivatedRoute } from '@angular/router';
+import { Admin } from '../models/Admin';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-administrate',
@@ -23,7 +24,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AdministrateComponent {
   public usingMocks:WritableSignal<boolean> = signal(false);
   public editingPhone:WritableSignal<number|null> = signal(null);
-  public userLogged:Producer;
+  public userLogged:Admin;
   public insuredForm:FormGroup;
   public countries:string[];
   public maxDate:Date;
@@ -34,9 +35,10 @@ export class AdministrateComponent {
 
   constructor(private insuredService:InsuredService,
               private companyService:CompanyService,
+              private authService:AuthenticationService,
               public dialog:MatDialog,
               private route:ActivatedRoute){
-    this.userLogged = new Producer('tiki','quaglia',new Date(),1);
+    this.userLogged = authService.userLogged!;
     const today:Date = new Date();
     this.countries  = ['Argentina','Brasil','Uruguay','Paraguay','Chile'];
     this.phones = [];
@@ -105,7 +107,7 @@ export class AdministrateComponent {
       this.insuredForm.controls['born'].value as Date,
       this.formatAddress(),
       this.insuredForm.controls['dni'].value,
-      this.userLogged.id!,
+      this.userLogged.id,
       this.phones,
       undefined,
       undefined,

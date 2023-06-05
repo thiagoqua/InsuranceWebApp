@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { InsuredsComponent } from './insureds/insureds.component';
@@ -24,6 +24,7 @@ import { AdministrateComponent, AppDateAdapter } from './administrate/administra
 import { ImportComponent } from './import/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatMenuModule
   ],
   providers: [
-    {provide: DateAdapter, useClass: AppDateAdapter}
+    { provide: DateAdapter, useClass: AppDateAdapter },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

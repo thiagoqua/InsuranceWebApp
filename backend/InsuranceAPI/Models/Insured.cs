@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InsuranceAPI.Models;
 
 public partial class Insured
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
 
     public string Firstname { get; set; } = null!;
@@ -38,7 +35,6 @@ public partial class Insured
 
     public virtual Company CompanyNavigation { get; set; } = null!;
 
-    [Required]
     public virtual ICollection<Phone> Phones { get; set; } = new List<Phone>();
 
     public virtual Producer ProducerNavigation { get; set; } = null!;
