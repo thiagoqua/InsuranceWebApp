@@ -1,0 +1,45 @@
+<div class="button-container">
+    <button mat-fab matTooltip="volver" [color]="'warn'" routerLink="/">
+        <mat-icon class="icon-bigger">keyboard_backspace</mat-icon>
+    </button>
+    <button mat-fab matTooltip="importar" [color]="'primary'"
+            (click)="this.wantsImport.set(true)">
+        <mat-icon class="icon-bigger">cloud_download</mat-icon>
+    </button>
+    <button mat-fab matTooltip="exportar" [color]="'primary'"
+            (click)="this.wantsImport.set(false)">
+        <mat-icon class="icon-bigger">cloud_upload</mat-icon>
+    </button>
+</div>
+
+<div *ngIf="wantsImport()" class="main">
+  <div class="import-input">
+    <button mat-raised-button (click)="fileInput.click()"
+            [disabled]="fileOk()"
+            class="uploader-button"
+            style="background-color: rgb(100, 190, 88);"
+            >
+        {{ fileName() }}
+    </button>
+    <input hidden (change)="handleFileSelected($event)" #fileInput type="file"
+            [multiple]="false" accept=".xls,.xlsx">
+    <button mat-mini-fab [hidden]="!fileOk()"
+            style="background-color: rgb(100,100,100);"
+            (click)="clearSelection(fileInput)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-error>{{ error() }}</mat-error>
+  <button mat-raised-button (click)="send()"
+          [hidden]="!fileOk()"
+          class="uploader-button"
+          color="warn"
+          >
+    Enviar al servidor
+  </button>
+  <mat-progress-bar mode="indeterminate" *ngIf="fileSended()"></mat-progress-bar>
+</div>
+
+<div *ngIf="wantsImport() == false">
+    <h1>quiero exportar</h1>
+</div>

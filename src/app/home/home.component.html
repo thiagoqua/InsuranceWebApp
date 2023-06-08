@@ -1,0 +1,41 @@
+<mat-toolbar color="warn" class="toolbar">
+  <div>
+    <button mat-icon-button routerLink="/administracion">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+    <span>Agregar asegurado</span>
+  </div>
+  <div>
+    <button mat-icon-button routerLink="/importar">
+      <mat-icon>import_export</mat-icon>
+    </button>
+    <span>Importar / exportar</span>
+  </div>
+  <div>
+    <button mat-icon-button (click)="endSession()" routerLink="/login">
+      <mat-icon>person</mat-icon>
+    </button>
+    <span>Cerrar sesión</span>
+  </div>
+</mat-toolbar>
+
+<div class="searcher">
+  <h2 *ngIf="usingMocks()" style="color:chocolate;font-size:100px;margin:0;">Using Mocks</h2>
+  <div>
+    <mat-form-field class="form">
+      <mat-label>Asegurado</mat-label>
+      <input class="insured-input" #searchInput matInput type="text" 
+            [(ngModel)]="insuredInput"
+            (ngModelChange)="resetInsureds($event)">
+      <button matSuffix *ngIf="searchInput.value" mat-icon-button aria-label="Clear" 
+              (click)="clearInput(searchInput)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-fab color="primary" type="submit" 
+            (click)="makeSearch(searchInput.value)">
+      <mat-icon class="searcher-icon">search</mat-icon>
+    </button>
+  </div>
+</div>
+<app-insureds [insureds]="insureds$"></app-insureds>

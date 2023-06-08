@@ -1,0 +1,61 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Companía</th>
+        <th>Estado</th>
+        <th>Póliza</th>
+        <th>Matrícula</th>
+        <th>Carpeta</th>
+        <th>Vigencia</th>
+        <th>Fecha de nacimiento</th>
+        <th>Dirección</th>
+        <th>DNI</th>
+        <th>CUIT</th>
+        <th>Productor</th>
+        <th>Descripción</th>
+        <th>Teléfonos</th>
+        <th>Descripción teléfonos</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let insured of insureds | async"
+          [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}">
+        <td>{{insured.firstname + " " + insured.lastname}}</td>
+        <td><img src="{{insured.companyNavigation!.logo}}" class="company-img"/></td>
+        <td [ngStyle]="{'background-color':evaluateColor(undefined,insured.status)}">
+          {{ insured.status }}
+        </td>
+        <td>{{ insured.insurancePolicy }}</td>
+        <td>{{insured.license}}</td>
+        <td>{{insured.folder}}</td>
+        <td>{{insured.life}}</td>
+        <td>{{formatDate(insured.born)}}</td>
+        <td>{{formatAddress(insured.addressNavigation)}}</td>
+        <td>{{insured.dni}}</td>
+        <td>{{insured.cuit}}</td>
+        <td>{{formatProducer(insured.producerNavigation!)}}</td>
+        <td>{{insured.description}}</td>
+        <td>{{formatPhones(insured.phones)}}</td>
+        <td>{{formatPhonesDescription(insured.phones)}}</td>
+        <td>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openDialog(insured.firstname,insured.lastname,insured.id!)">
+              <mat-icon>delete</mat-icon>
+              <span>Eliminar</span>
+            </button>
+            <button mat-menu-item routerLink="administracion/{{insured.id}}">
+              <mat-icon>edit</mat-icon>
+              <span>Editar</span>
+            </button>
+          </mat-menu>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

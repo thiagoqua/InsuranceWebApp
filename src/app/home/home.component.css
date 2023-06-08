@@ -1,0 +1,40 @@
+nav button{
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.searcher{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searcher div{
+  width: 100%;
+  text-align: center;
+}
+
+.form{
+  width: 50%;
+}
+
+.form + button{
+  margin-left: 3%;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.searcher-icon{
+  margin-right:10%;
+  margin-bottom:10%;
+  font-size:2rem;
+}
+
+.toolbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
