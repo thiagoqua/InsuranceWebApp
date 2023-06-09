@@ -1,542 +1,1394 @@
 [
   {
-    "id": 2,
-    "firstname": "alejandra",
-    "lastname": "lionetti",
-    "license": "444444",
-    "folder": 1836,
-    "life": "20-03 20-03",
-    "born": "1973-01-13T00:00:00",
-    "address": 1,
-    "dni": "22932733",
-    "cuit": "27-22932733-5",
-    "producer": 1,
-    "description": "hidrocarb",
-    "company": 1,
-    "addressNavigation": {
-      "id": 1,
-      "street": "San Nicolás",
-      "number": "727",
-      "floor": null,
-      "departament": null,
-      "city": "Arroyo Seco",
-      "province": "Santa Fe",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 1,
-      "name": "Cooperación Seguros",
-      "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
-    },
-    "phones": [
-      {
-        "id": 1,
-        "insured": 2,
-        "number": "+5493411 55516",
-        "description": "padre - Gaston Edul"
+      "id": 27,
+      "firstname": "ESTELA",
+      "lastname": "CASTELUCHE",
+      "license": "464778/05",
+      "folder": 1509,
+      "life": "04/08-04/02",
+      "born": "1974-07-09T00:00:00",
+      "address": 82,
+      "dni": "24007576",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Fiat Uno",
+      "status": "EN JUICIO",
+      "addressNavigation": {
+          "id": 82,
+          "street": " CTDA. MEDICINA",
+          "number": " 48 BIS",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
       },
-      {
-        "id": 5,
-        "insured": 2,
-        "number": "+5493411 55566",
-        "description": "madre - Monica Edul"
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
       },
-      {
-        "id": 6,
-        "insured": 2,
-        "number": "+5493411 55576",
-        "description": "hermano - Carlo Edul"
+      "phones": [
+          {
+              "id": 32,
+              "insured": 27,
+              "number": "15444305",
+              "description": "castu edited"
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 28,
+      "firstname": "ESTELA",
+      "lastname": "CASTELUCHE",
+      "license": "464778/05",
+      "folder": 0,
+      "life": "01/12-01/04",
+      "born": "1974-07-10T00:00:00",
+      "address": 52,
+      "dni": "24007576",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Focus",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 52,
+          "street": " CTDA. MEDICINA",
+          "number": " 48 BIS",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
       },
-      {
-        "id": 7,
-        "insured": 2,
-        "number": "+5493411 55586",
-        "description": "prima - Margaret Edul"
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 33,
+              "insured": 28,
+              "number": "15444305",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
       }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
   },
   {
-    "id": 3,
-    "firstname": "jose hernestino",
-    "lastname": "rivadavia",
-    "license": "366666",
-    "folder": 92,
-    "life": "04-05 04-11",
-    "born": "1810-02-02T00:00:00",
-    "address": 3,
-    "dni": "666666  ",
-    "cuit": null,
-    "producer": 2,
-    "description": "estuvo en la revolución industrial",
-    "company": 2,
-    "addressNavigation": {
-      "id": 3,
-      "street": "Lionel Andrés Messi",
-      "number": "2022",
-      "floor": 4,
-      "departament": 86,
-      "city": "Rosario",
-      "province": "Santa Fe",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      {
-        "id": 2,
-        "insured": 3,
-        "number": "+5493411 55526",
-        "description": "hermano - Eduardo Rivadavia"
+      "id": 29,
+      "firstname": "DIEGO",
+      "lastname": "CASTILLO",
+      "license": "827501",
+      "folder": 0,
+      "life": "17/10-17/02",
+      "born": "1988-02-29T00:00:00",
+      "address": 53,
+      "dni": "33449079",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 53,
+          "street": " URQUIZA",
+          "number": " 259",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 34,
+              "insured": 29,
+              "number": "15548546",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
       }
-    ],
-    "producerNavigation": {
-      "id": 2,
-      "firstname": "ricky",
-      "lastname": "quaglia",
-      "joined": "2000-01-01T00:00:00"
-    }
   },
   {
-    "id": 4,
-    "firstname": "nicolas",
-    "lastname": "latifi",
-    "license": "DNF9999",
-    "folder": 333,
-    "life": "29-07 29-11",
-    "born": "1990-05-10T00:00:00",
-    "address": 2,
-    "dni": "9999999 ",
-    "cuit": null,
-    "producer": 3,
-    "description": "de todo menos piloto",
-    "company": 2,
-    "addressNavigation": {
-      "id": 2,
-      "street": "Galvez",
-      "number": "32",
-      "floor": null,
-      "departament": null,
-      "city": "Arroyo Seco",
-      "province": "Santa Fe",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 3, "insured": 4, "number": "+5493411 55546", "description": null }
-    ],
-    "producerNavigation": {
-      "id": 3,
-      "firstname": "leo",
-      "lastname": "lionetti",
-      "joined": "1980-01-01T00:00:00"
-    }
-  },
-  {
-    "id": 5,
-    "firstname": "carlos",
-    "lastname": "sainz",
-    "license": "CS555555",
-    "folder": 55,
-    "life": "30-07 30-01",
-    "born": "1995-07-19T00:00:00",
-    "address": 4,
-    "dni": "555555  ",
-    "cuit": null,
-    "producer": 1,
-    "description": "capo",
-    "company": 1,
-    "addressNavigation": {
-      "id": 4,
-      "street": "Av Cárcano",
-      "number": "343 bis",
-      "floor": null,
-      "departament": null,
-      "city": "Villa Carlos Paz",
-      "province": "Córdoba",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 1,
-      "name": "Cooperación Seguros",
-      "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
-    },
-    "phones": [
-      {
-        "id": 4,
-        "insured": 5,
-        "number": "+5493411 55556",
-        "description": "novia - La gran putísima"
+      "id": 30,
+      "firstname": "DOMINGO",
+      "lastname": "CASTILLO",
+      "license": "M-5000657",
+      "folder": 0,
+      "life": "15/08-15/08",
+      "born": "1965-08-04T00:00:00",
+      "address": 54,
+      "dni": "17417465",
+      "cuit": "",
+      "producer": 1,
+      "description": "Lopez Carlos",
+      "company": 2,
+      "insurancePolicy": "incendio",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 54,
+          "street": " JUAREZ CELMAN",
+          "number": " 789",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 35,
+              "insured": 30,
+              "number": "15530926",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
       }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
   },
   {
-    "id": 9,
-    "firstname": "mac",
-    "lastname": "vergastappen",
-    "license": "113311",
-    "folder": 33,
-    "life": "04/06-30/06",
-    "born": "2005-06-03T00:00:00",
-    "address": 10,
-    "dni": "113311  ",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 10,
-      "street": "red bull",
-      "number": "1",
-      "floor": null,
-      "departament": null,
-      "city": "milton keys",
-      "province": "inglaterra",
-      "country": "Brasil"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 0, "insured": 9, "number": "1133113311", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 31,
+      "firstname": "DOMINGO",
+      "lastname": "CASTILLO",
+      "license": "345464/09",
+      "folder": 0,
+      "life": "05/11-05/03",
+      "born": "1965-08-04T00:00:00",
+      "address": 55,
+      "dni": "17417465",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Peug. 206",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 55,
+          "street": " JUAREZ CELMAN",
+          "number": " 789",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 36,
+              "insured": 31,
+              "number": "15530926",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 11,
-    "firstname": "mac",
-    "lastname": "vergastappen",
-    "license": "113311",
-    "folder": 33,
-    "life": "04/06-30/06",
-    "born": "2005-06-03T00:00:00",
-    "address": 12,
-    "dni": "113311  ",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 12,
-      "street": "red bull",
-      "number": "1",
-      "floor": null,
-      "departament": null,
-      "city": "milton keys",
-      "province": "inglaterra",
-      "country": "Brasil"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 8, "insured": 11, "number": "1133113311", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 32,
+      "firstname": "EZEQUIEL",
+      "lastname": "CASTILLO",
+      "license": "M-5730034",
+      "folder": 0,
+      "life": "20/12-20/12",
+      "born": "1989-11-05T00:00:00",
+      "address": 56,
+      "dni": "34651441",
+      "cuit": "",
+      "producer": 1,
+      "description": "Lopez Carlos",
+      "company": 2,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 56,
+          "street": " BELGRANO",
+          "number": " 369",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 37,
+              "insured": 32,
+              "number": "0341-15-588-5701",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 12,
-    "firstname": "mac",
-    "lastname": "vergastappen",
-    "license": "113311",
-    "folder": 33,
-    "life": "04/06-30/06",
-    "born": "2005-06-03T00:00:00",
-    "address": 13,
-    "dni": "113311  ",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 13,
-      "street": "red bull",
-      "number": "1",
-      "floor": null,
-      "departament": null,
-      "city": "milton keys",
-      "province": "inglaterra",
-      "country": "Brasil"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 9, "insured": 12, "number": "1133113311", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 33,
+      "firstname": "JORGE",
+      "lastname": "CASTRELO",
+      "license": "M-4588931",
+      "folder": 1109,
+      "life": "13/03-13/03",
+      "born": "1969-04-23T00:00:00",
+      "address": 57,
+      "dni": "20590230",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Cronos",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 57,
+          "street": " COLON",
+          "number": " 332",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 38,
+              "insured": 33,
+              "number": "15543934",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 13,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 14,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 14,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 10, "insured": 13, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 34,
+      "firstname": "JORGE",
+      "lastname": "CASTRELO",
+      "license": "M-4588931",
+      "folder": 0,
+      "life": "26/05-26/05",
+      "born": "1969-04-23T00:00:00",
+      "address": 58,
+      "dni": "20590230",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Siena",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 58,
+          "street": " COLON",
+          "number": " 332",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 39,
+              "insured": 34,
+              "number": "15543934",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 14,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 15,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 15,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 11, "insured": 14, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 35,
+      "firstname": "JUAN",
+      "lastname": "CASTRICINI",
+      "license": "M-888866",
+      "folder": 142,
+      "life": "06/04-06/10",
+      "born": "1954-04-08T00:00:00",
+      "address": 59,
+      "dni": "11108014",
+      "cuit": "23000000000",
+      "producer": 2,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "camión",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 59,
+          "street": " J.SALK",
+          "number": " S/N",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 40,
+              "insured": 35,
+              "number": "3402448436",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 2,
+          "firstname": "ricardo",
+          "lastname": "quaglia",
+          "joined": "2000-01-01T00:00:00"
+      }
   },
   {
-    "id": 15,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 16,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 16,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 12, "insured": 15, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 36,
+      "firstname": "JAQUELINA",
+      "lastname": "CATALANI",
+      "license": "513487/00",
+      "folder": 1062,
+      "life": "19/07-19/01",
+      "born": "1981-02-25T00:00:00",
+      "address": 60,
+      "dni": "28486829",
+      "cuit": "341-5068339",
+      "producer": 2,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Twingo",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 60,
+          "street": " JUAN PAGNAN",
+          "number": " 584",
+          "floor": null,
+          "departament": null,
+          "city": "FIGHIERA",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 41,
+              "insured": 36,
+              "number": "427944 ",
+              "description": "padre"
+          }
+      ],
+      "producerNavigation": {
+          "id": 2,
+          "firstname": "ricardo",
+          "lastname": "quaglia",
+          "joined": "2000-01-01T00:00:00"
+      }
   },
   {
-    "id": 16,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 17,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 17,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 13, "insured": 16, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 37,
+      "firstname": "JUAN",
+      "lastname": "CATALANI",
+      "license": "M- 3752425",
+      "folder": 659,
+      "life": "",
+      "born": "1951-01-15T00:00:00",
+      "address": 61,
+      "dni": "6058772 ",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": null,
+      "status": "EN JUICIO",
+      "addressNavigation": {
+          "id": 61,
+          "street": " JUAN PAGNAN",
+          "number": " 585",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 42,
+              "insured": 37,
+              "number": "427944 ",
+              "description": "padre"
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 17,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 18,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 18,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 14, "insured": 17, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 38,
+      "firstname": "NORBERTO",
+      "lastname": "CATALANI",
+      "license": "M-1547838",
+      "folder": 1460,
+      "life": "08/09-08/09",
+      "born": "1951-01-16T00:00:00",
+      "address": 62,
+      "dni": "8374336 ",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 62,
+          "street": " ALEJ. GOMEZ",
+          "number": " 960",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 43,
+              "insured": 38,
+              "number": "15659512",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   },
   {
-    "id": 18,
-    "firstname": "pepe",
-    "lastname": "argento",
-    "license": "PP-ARG",
-    "folder": 11,
-    "life": "12/06-30/06",
-    "born": "2005-06-01T00:00:00",
-    "address": 19,
-    "dni": "20055002",
-    "cuit": "",
-    "producer": 1,
-    "description": "",
-    "company": 2,
-    "addressNavigation": {
-      "id": 19,
-      "street": "bs as",
-      "number": "2005",
-      "floor": null,
-      "departament": null,
-      "city": "buenos aires",
-      "province": "buenos aires",
-      "country": "Argentina"
-    },
-    "companyNavigation": {
-      "id": 2,
-      "name": "Federación Patronal",
-      "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
-    },
-    "phones": [
-      { "id": 15, "insured": 18, "number": "3412233", "description": "" }
-    ],
-    "producerNavigation": {
-      "id": 1,
-      "firstname": "tiki",
-      "lastname": "quaglia",
-      "joined": "2023-05-01T00:00:00"
-    }
+      "id": 39,
+      "firstname": "ROBERTO",
+      "lastname": "CATILLI",
+      "license": "835776",
+      "folder": 0,
+      "life": "06/01-06/05",
+      "born": "1967-05-14T00:00:00",
+      "address": 63,
+      "dni": "17982733",
+      "cuit": "",
+      "producer": 2,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 63,
+          "street": " MITRE",
+          "number": " 626 ",
+          "floor": null,
+          "departament": null,
+          "city": "GRAL.LAGOS",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 44,
+              "insured": 39,
+              "number": "15541035",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 2,
+          "firstname": "ricardo",
+          "lastname": "quaglia",
+          "joined": "2000-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 40,
+      "firstname": "ESTEBAN",
+      "lastname": "CATTANI",
+      "license": "M-3177480",
+      "folder": 1192,
+      "life": "26/04-26/04",
+      "born": "1986-11-18T00:00:00",
+      "address": 64,
+      "dni": "32648315",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": "Oroch",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 64,
+          "street": " RIVADAVIA",
+          "number": " 924",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 45,
+              "insured": 40,
+              "number": "0341-153554270",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 41,
+      "firstname": "MARIANA",
+      "lastname": "CATTANI",
+      "license": "554793/08",
+      "folder": 1602,
+      "life": "13/08-13/12",
+      "born": "1973-06-12T00:00:00",
+      "address": 65,
+      "dni": "23356047",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Eco Sport 2015",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 65,
+          "street": " MORENO",
+          "number": " 1175",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 46,
+              "insured": 41,
+              "number": "0341 153153201 ",
+              "description": null
+          },
+          {
+              "id": 47,
+              "insured": 41,
+              "number": " 429046",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 42,
+      "firstname": "ROSA",
+      "lastname": "CAUCOTE",
+      "license": "M-3155570",
+      "folder": 1223,
+      "life": "13/04-13/08",
+      "born": "1966-02-08T00:00:00",
+      "address": 66,
+      "dni": "17507317",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": "UP",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 66,
+          "street": " SAN NICOLAS",
+          "number": " 78",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 48,
+              "insured": 42,
+              "number": "427738 ",
+              "description": null
+          },
+          {
+              "id": 49,
+              "insured": 42,
+              "number": " 15484174",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 43,
+      "firstname": "MARIA",
+      "lastname": "CEBALLEZ",
+      "license": "M-4009298",
+      "folder": 0,
+      "life": "15/09-15/09",
+      "born": "1987-08-26T00:00:00",
+      "address": 67,
+      "dni": "32897866",
+      "cuit": "",
+      "producer": 4,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "aparte",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 67,
+          "street": " SARMIENTO",
+          "number": " 547",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 50,
+              "insured": 43,
+              "number": "02473-15-44-9828",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 4,
+          "firstname": "zurdo",
+          "lastname": "nieri",
+          "joined": "2007-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 44,
+      "firstname": "MIGUEL",
+      "lastname": "CECCARELLI",
+      "license": "M-5192198",
+      "folder": 0,
+      "life": "01/12-01/12",
+      "born": "1952-03-06T00:00:00",
+      "address": 68,
+      "dni": "10060488",
+      "cuit": "",
+      "producer": 4,
+      "description": "Moresi inmobiliaria",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 68,
+          "street": " MORENO",
+          "number": " 645",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 51,
+              "insured": 44,
+              "number": "15545171",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 4,
+          "firstname": "zurdo",
+          "lastname": "nieri",
+          "joined": "2007-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 45,
+      "firstname": "JENIMA",
+      "lastname": "CECIA",
+      "license": "M-5056060",
+      "folder": 0,
+      "life": "07/05-07/05",
+      "born": "1991-09-04T00:00:00",
+      "address": 69,
+      "dni": "36681372",
+      "cuit": "",
+      "producer": 4,
+      "description": "Nozzi Inmobiliaria",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 69,
+          "street": " INDEPENDENCIA",
+          "number": " 72",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 52,
+              "insured": 45,
+              "number": "15-50-8823",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 4,
+          "firstname": "zurdo",
+          "lastname": "nieri",
+          "joined": "2007-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 46,
+      "firstname": "GERMAN",
+      "lastname": "CEJAS",
+      "license": "M-703208",
+      "folder": 94,
+      "life": "03/01-03/07",
+      "born": "1951-05-28T00:00:00",
+      "address": 70,
+      "dni": "8504130 ",
+      "cuit": "",
+      "producer": 2,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 70,
+          "street": " INDEPENDENCIA",
+          "number": " 1595",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 53,
+              "insured": 46,
+              "number": "15503410",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 2,
+          "firstname": "ricardo",
+          "lastname": "quaglia",
+          "joined": "2000-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 47,
+      "firstname": "JOANA",
+      "lastname": "CEJAS",
+      "license": "758685/10",
+      "folder": 802,
+      "life": "18/06-18/06",
+      "born": "1986-09-28T00:00:00",
+      "address": 71,
+      "dni": "32430634",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 71,
+          "street": " FILIBERTI",
+          "number": " 860",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 54,
+              "insured": 47,
+              "number": "15546842",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 48,
+      "firstname": "JUAN",
+      "lastname": "CEJAS",
+      "license": "M-1830448",
+      "folder": 2726,
+      "life": "03/11-03/11",
+      "born": "1971-10-19T00:00:00",
+      "address": 72,
+      "dni": "22479072",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 72,
+          "street": " SAN MARTIN",
+          "number": " 400",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 55,
+              "insured": 48,
+              "number": "011-15-5000-8777",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 49,
+      "firstname": "LAURA",
+      "lastname": "CEJAS",
+      "license": "782244",
+      "folder": 0,
+      "life": "18/03-18/07",
+      "born": "1971-10-07T00:00:00",
+      "address": 73,
+      "dni": "22308443",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "Magnate Maximo",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 73,
+          "street": " INDEPENDENCIA",
+          "number": " 1584",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 56,
+              "insured": 49,
+              "number": "15507981",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 50,
+      "firstname": "SEBASTIAN",
+      "lastname": "CEJAS",
+      "license": "442716/05",
+      "folder": 1456,
+      "life": "26/11-26/05",
+      "born": "1991-01-22T00:00:00",
+      "address": 74,
+      "dni": "35644847",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ANULADA",
+      "addressNavigation": {
+          "id": 74,
+          "street": " I. COSTANTINI",
+          "number": " 860",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 57,
+              "insured": 50,
+              "number": "15527972",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 51,
+      "firstname": "SEBASTIAN",
+      "lastname": "CEJAS",
+      "license": "M-5309593",
+      "folder": 0,
+      "life": "15/05-15/05",
+      "born": "1991-01-22T00:00:00",
+      "address": 75,
+      "dni": "35644847",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": "moto",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 75,
+          "street": " INDEPENDECIA",
+          "number": " 1330",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 58,
+              "insured": 51,
+              "number": "15527972",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 52,
+      "firstname": "WALTER",
+      "lastname": "CEJAS",
+      "license": "817453",
+      "folder": 0,
+      "life": "01/07-01/11",
+      "born": "1985-10-29T00:00:00",
+      "address": 76,
+      "dni": "31613287",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 76,
+          "street": " COSTANTINI",
+          "number": " 669",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 59,
+              "insured": 52,
+              "number": "15501985",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 53,
+      "firstname": "SERGIO",
+      "lastname": "CELAYA",
+      "license": "794941",
+      "folder": 0,
+      "life": "15/09-15/01",
+      "born": "1979-06-22T00:00:00",
+      "address": 77,
+      "dni": "27115036",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": null,
+      "status": "ANULADA",
+      "addressNavigation": {
+          "id": 77,
+          "street": " AMEGHINO",
+          "number": " 49",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 60,
+              "insured": 53,
+              "number": "15559280",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 54,
+      "firstname": "RICARDO",
+      "lastname": "CELESTE",
+      "license": "M-1690136",
+      "folder": 6,
+      "life": "08/02-08/08",
+      "born": "1959-06-09T00:00:00",
+      "address": 78,
+      "dni": "13413416",
+      "cuit": "",
+      "producer": 2,
+      "description": "",
+      "company": 1,
+      "insurancePolicy": "auto",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 78,
+          "street": " ZONA PUERTO",
+          "number": " S/N",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 1,
+          "name": "Cooperación Seguros",
+          "logo": "https://selfie.100seguro.com.ar/wp-content/uploads/2022/10/logo-cia.png"
+      },
+      "phones": [
+          {
+              "id": 61,
+              "insured": 54,
+              "number": "15521227",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 2,
+          "firstname": "ricardo",
+          "lastname": "quaglia",
+          "joined": "2000-01-01T00:00:00"
+      }
+  },
+  {
+      "id": 55,
+      "firstname": "RICARDO",
+      "lastname": "CELESTE",
+      "license": "M-1690136",
+      "folder": 0,
+      "life": "05/05-05/05",
+      "born": "1959-06-09T00:00:00",
+      "address": 79,
+      "dni": "13413416",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": "casa",
+      "status": "ANULADA",
+      "addressNavigation": {
+          "id": 79,
+          "street": " ZONA PUERTO",
+          "number": " S/N",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 62,
+              "insured": 55,
+              "number": "426271",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
+  },
+  {
+      "id": 56,
+      "firstname": "RICARDO",
+      "lastname": "CELESTE",
+      "license": "M-1690136",
+      "folder": 0,
+      "life": "06/12-06/12",
+      "born": "1959-06-09T00:00:00",
+      "address": 80,
+      "dni": "13413416",
+      "cuit": "",
+      "producer": 1,
+      "description": "",
+      "company": 2,
+      "insurancePolicy": "moto",
+      "status": "ACTIVA",
+      "addressNavigation": {
+          "id": 80,
+          "street": " ZONA PUERTO",
+          "number": " S/N",
+          "floor": null,
+          "departament": null,
+          "city": "ARROYO SECO",
+          "province": "Santa Fe",
+          "country": "Argentina"
+      },
+      "companyNavigation": {
+          "id": 2,
+          "name": "Federación Patronal",
+          "logo": "https://www.eliasseguros.com.ar/images/logo-federacion.png"
+      },
+      "phones": [
+          {
+              "id": 63,
+              "insured": 56,
+              "number": "426271",
+              "description": null
+          }
+      ],
+      "producerNavigation": {
+          "id": 1,
+          "firstname": "tiki",
+          "lastname": "quaglia",
+          "joined": "2023-05-01T00:00:00"
+      }
   }
 ]

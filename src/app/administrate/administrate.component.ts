@@ -43,7 +43,7 @@ export class AdministrateComponent {
     this.userLogged = authService.userLogged!;
     const today:Date = new Date();
     this.countries  = ['Argentina','Brasil','Uruguay','Paraguay','Chile'];
-    this.statuses = ['Activa','En juicio','Anulada'];
+    this.statuses = ['ACTIVA','EN JUICIO','ANULADA'];
     this.phones = [];
     this.maxDate = new Date(today.getFullYear() - 18,today.getMonth(),today.getDay());
     this.companies = [];
@@ -207,7 +207,6 @@ export class AdministrateComponent {
       this.insuredForm.get('insurancePolicy')?.setValue(data.insurancePolicy);
       this.insuredForm.get('policyStatus')?.setValue(data.status);
       this.loading.set(false);
-      console.log(this.insuredForm.get('policyStatus')?.setValue(data.status));
     });
   }
 

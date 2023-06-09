@@ -17,7 +17,7 @@
         <th>Descripción</th>
         <th>Teléfonos</th>
         <th>Descripción teléfonos</th>
-        <th></th>
+        <th *ngIf="!isPreview"></th>
       </tr>
     </thead>
     <tbody>
@@ -28,9 +28,9 @@
         <td [ngStyle]="{'background-color':evaluateColor(undefined,insured.status)}">
           {{ insured.status }}
         </td>
-        <td>{{ insured.insurancePolicy }}</td>
+        <td>{{insured.insurancePolicy}}</td>
         <td>{{insured.license}}</td>
-        <td>{{insured.folder}}</td>
+        <td>{{insured.folder != 0 ? insured.folder : ''}}</td>
         <td>{{insured.life}}</td>
         <td>{{formatDate(insured.born)}}</td>
         <td>{{formatAddress(insured.addressNavigation)}}</td>
@@ -40,7 +40,7 @@
         <td>{{insured.description}}</td>
         <td>{{formatPhones(insured.phones)}}</td>
         <td>{{formatPhonesDescription(insured.phones)}}</td>
-        <td>
+        <td *ngIf="!isPreview">
           <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
           </button>

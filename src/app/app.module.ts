@@ -25,10 +25,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
-import { ImportComponent } from './import/import.component'
+import { ImportComponent } from './import-export/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ExportComponent } from './export/export.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
     LoginComponent,
     AdministrateComponent,
     ImportComponent,
-    DialogComponent
+    DialogComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule,

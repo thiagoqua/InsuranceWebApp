@@ -14,8 +14,9 @@ import { InsuredService } from '../services/insured.service';
   styleUrls: ['./insureds.component.css']
 })
 export class InsuredsComponent {
-  public deletedOk:WritableSignal<boolean|undefined> = signal(undefined);
   @Input() insureds:Observable<Insured[]> = of([]);
+  @Input() isPreview?:boolean = false;
+  public deletedOk:WritableSignal<boolean|undefined> = signal(undefined);
   private producersColors:any;
   private statusColors:any;
 
@@ -23,13 +24,13 @@ export class InsuredsComponent {
     this.producersColors = {
       'zurdo':'#FAAC77',
       'tiki':'#D17CFA',
-      'ricky':'#7996FA',
+      'ricardo':'#7996FA',
       'leo':'#FAF28D'
     }
     this.statusColors = {
-      'Activa':'greenyellow',
-      'En juicio':'aqua',
-      'Anulada':'red'
+      'activa':'greenyellow',
+      'en juicio':'aqua',
+      'anulada':'red'
     }
   }    
 
@@ -37,7 +38,7 @@ export class InsuredsComponent {
     if(prod)
       return `${this.producersColors[prod.firstname] || 'white'}`;
     else if(status)
-      return `${this.statusColors[status] || 'white'}`;
+      return `${this.statusColors[status.toLowerCase()] || 'white'}`;
     return '';
   }
 
@@ -58,7 +59,9 @@ export class InsuredsComponent {
   }
 
   formatPhonesDescription(phones:Phone[]){
-    return phones.map((phone:Phone) => `${phone.description} `)
+    return phones.map((phone:Phone) => 
+      phone.description != null ? `${phone.description} ` : ''
+    )
   }
 
   openDialog(firstname:string,lastname:string,id:number): void {

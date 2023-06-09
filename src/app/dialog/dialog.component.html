@@ -17,7 +17,7 @@
   </div>
 </div>
 <!-- Insure creation/update failed -->
-<div *ngIf="!status">
+<div *ngIf="status == false">
   <h1 mat-dialog-title>
     Oops! hubo un error al {{ display == 1 ? "crear" : "actualizar" }} el
     usuario.
@@ -40,4 +40,16 @@
       Sí
     </button>
   </div>
+</div>
+<!-- Modifying the database by an import -->
+<div *ngIf="display == 3">
+  <h1 mat-dialog-title>Modificar toda la base de datos</h1>
+  <div mat-dialog-content>
+    Tenga en cuenta que, procediendo con la importación, <b>se borrarán todos los registros de la base de datos</b>, siendo reemplazados por los importados en el archivo excel.
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial>
+      Guardar cambios
+    </button>
+  </mat-dialog-actions>
 </div>
