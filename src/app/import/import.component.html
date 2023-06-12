@@ -12,7 +12,7 @@
     </button>
 </div>
 
-<div *ngIf="export() == false" class="main">
+<div *ngIf="export() == false" class="main" style="margin-bottom:2rem">
   <div class="import-input">
     <button mat-fab extended (click)="fileInput.click()"
             [disabled]="fileOk()"
@@ -29,29 +29,34 @@
             (click)="clearSelection(fileInput)">
       <mat-icon>close</mat-icon>
     </button>
+    <button mat-fab extended (click)="send()"
+            *ngIf="fileOk() || uploadResponse()"
+            [disabled]="fileSended()"
+            class="uploader-button"
+            color="warn"
+      >
+      <mat-icon>send</mat-icon>
+      Enviar al servidor
+    </button>
   </div>
-  <mat-error>{{ error() }}</mat-error>
-  <button mat-fab extended (click)="send()"
-          [hidden]="!fileOk() || uploadResponse()"
-          class="uploader-button"
-          color="warn"
-          >
-    <mat-icon>send</mat-icon>
-    Enviar al servidor
-  </button>
+  <mat-error *ngIf="error() != ''">{{ error() }}</mat-error>
   <mat-progress-bar mode="indeterminate" 
                     *ngIf="fileSended() && !uploadResponse()"></mat-progress-bar>
-
-  <div *ngIf="uploadResponse() == true" class="main">
-    <app-insureds [insureds]="insureds$" [isPreview]="true"></app-insureds>
-    <div class="button-container-2">
-      <button mat-raised-button color="warn" (click)="onCancel()" routerLink="/">
-        Cancelar
-      </button>
-      <button mat-raised-button (click)="openDialog()" color="primary">
-        Efectuar cambios
-      </button> 
-    </div>
+                    
+</div>
+<app-insureds [insureds]="insureds$" [isPreview]="true"
+              *ngIf="uploadResponse() == true"></app-insureds>
+<div *ngIf="uploadResponse() == true" class="main">
+  <div *ngIf="nonInterpreted">
+    <mat-error *ngFor="let ni of nonInterpreted">{{ni}}</mat-error>
+  </div>
+  <div class="button-container-2">
+    <button mat-raised-button color="warn" (click)="onCancel()" routerLink="/">
+      Cancelar
+    </button>
+    <button mat-raised-button (click)="handleStore()" color="primary">
+      Efectuar cambios
+    </button> 
   </div>
 </div>
 

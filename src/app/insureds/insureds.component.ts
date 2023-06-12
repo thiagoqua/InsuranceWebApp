@@ -19,6 +19,8 @@ export class InsuredsComponent {
   public deletedOk:WritableSignal<boolean|undefined> = signal(undefined);
   private producersColors:any;
   private statusColors:any;
+  private previousRow?:HTMLTableRowElement;
+  private previousRowBackground?:string;
 
   constructor(private service:InsuredService,private dialog:MatDialog){
     this.producersColors = {
@@ -40,6 +42,15 @@ export class InsuredsComponent {
     else if(status)
       return `${this.statusColors[status.toLowerCase()] || 'white'}`;
     return '';
+  }
+
+  onClick(actualRow:HTMLTableRowElement):void{
+    if(this.previousRow)
+      this.previousRow.style.backgroundColor = this.previousRowBackground!;
+    
+    this.previousRowBackground = actualRow.style.backgroundColor;
+    actualRow.style.backgroundColor = '#B5E3BB';
+    this.previousRow = actualRow;
   }
 
   formatDate(date:Date):string{

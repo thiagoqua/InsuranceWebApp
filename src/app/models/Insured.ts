@@ -16,6 +16,7 @@ export class Insured{
     public producer:number;
     public phones:Phone[];
     public status:string;
+    public paymentExpiration:number;
     public address?:number;
     public producerNavigation?:Producer;
     public companyNavigation?:Company;
@@ -37,6 +38,7 @@ export class Insured{
         producer:number,
         phones:Phone[],
         status:string,
+        paymentExpiration:number,
         address?:number,
         producerNavigation?:Producer,
         description?:string,
@@ -57,6 +59,7 @@ export class Insured{
         this.phones = phones;
         this.producerNavigation = producerNavigation;
         this.status = status;
+        this.paymentExpiration = paymentExpiration;
         this.address = address;
         this.description = description;
         this.cuit = cuit;

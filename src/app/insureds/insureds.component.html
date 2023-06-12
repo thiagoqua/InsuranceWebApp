@@ -9,6 +9,7 @@
         <th>Matrícula</th>
         <th>Carpeta</th>
         <th>Vigencia</th>
+        <th>Vencimiento de cuota</th>
         <th>Fecha de nacimiento</th>
         <th>Dirección</th>
         <th>DNI</th>
@@ -21,8 +22,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let insured of insureds | async"
-          [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}">
+      <tr *ngFor="let insured of insureds | async" #row
+          [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}"
+          (click)="onClick(row)">
         <td>{{insured.firstname + " " + insured.lastname}}</td>
         <td><img src="{{insured.companyNavigation!.logo}}" class="company-img"/></td>
         <td [ngStyle]="{'background-color':evaluateColor(undefined,insured.status)}">
@@ -32,6 +34,7 @@
         <td>{{insured.license}}</td>
         <td>{{insured.folder != 0 ? insured.folder : ''}}</td>
         <td>{{insured.life}}</td>
+        <td>{{insured.paymentExpiration}}</td>
         <td>{{formatDate(insured.born)}}</td>
         <td>{{formatAddress(insured.addressNavigation)}}</td>
         <td>{{insured.dni}}</td>

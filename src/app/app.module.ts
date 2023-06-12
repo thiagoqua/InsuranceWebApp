@@ -25,7 +25,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
-import { ImportComponent } from './import-export/import.component'
+import { ImportComponent } from './import/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';

@@ -1,30 +1,30 @@
 <!-- Insured created successfully -->
-<div *ngIf="display == 1 && status">
+<div *ngIf="display == 1 && status == true">
   <h1 mat-dialog-title>Asegurado creado exitosamente!</h1>
   <div mat-dialog-actions>
-    <button mat-button mat-dialog-close routerLink="/">
+    <button mat-button mat-dialog-close routerLink="/" color="primary">
       Volver a la pantalla principal
     </button>
   </div>
 </div>
 <!-- Insured updated successfully -->
-<div *ngIf="display == 2 && status">
+<div *ngIf="display == 2 && status == true">
   <h1 mat-dialog-title>Asegurado actualizado exitosamente!</h1>
   <div mat-dialog-actions>
-    <button mat-button mat-dialog-close routerLink="/">
+    <button mat-button mat-dialog-close routerLink="/" color="primary">
       Volver a la pantalla principal
     </button>
   </div>
 </div>
 <!-- Insure creation/update failed -->
-<div *ngIf="status == false">
+<div *ngIf="(display == 1 || display == 2) && status == false">
   <h1 mat-dialog-title>
     Oops! hubo un error al {{ display == 1 ? "crear" : "actualizar" }} el
     usuario.
   </h1>
   <p mat-dialog-content>Contactese con los desarrolladores</p>
   <div mat-dialog-actions>
-    <button mat-button mat-dialog-close routerLink="/">
+    <button mat-button mat-dialog-close routerLink="/" color="warn">
       Volver a la pantalla principal
     </button>
   </div>
@@ -36,13 +36,13 @@
     <button mat-button [mat-dialog-close]="false">
       Cancelar
     </button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="warn">
       Sí
     </button>
   </div>
 </div>
 <!-- Modifying the database by an import -->
-<div *ngIf="display == 3">
+<div *ngIf="display == 3 && status == undefined">
   <h1 mat-dialog-title>Modificar toda la base de datos</h1>
   <div mat-dialog-content>
     Tenga en cuenta que, procediendo con la importación, <b>se borrarán todos los registros de la base de datos</b>, siendo reemplazados por los importados en el archivo excel.
@@ -52,4 +52,25 @@
       Guardar cambios
     </button>
   </mat-dialog-actions>
+</div>
+<!-- Excel interpreted successfully and changes have been successfully too -->
+<div *ngIf="display == 3 && status == true">
+  <h1 mat-dialog-title>Los cambios se han guardado correctamente!</h1>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close routerLink="/" color="primary">
+      Volver a la pantalla principal
+    </button>
+  </div>
+</div>
+<!-- Excel interpreted successfully but changes hadn't been setted -->
+<div *ngIf="display == 3 && status == false">
+  <h1 mat-dialog-title>
+    Oops! hubo un error al guardar los cambios.
+  </h1>
+  <p mat-dialog-content>Contactese con los desarrolladores</p>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close routerLink="/" color="warn">
+      Volver a la pantalla principal
+    </button>
+  </div>
 </div>

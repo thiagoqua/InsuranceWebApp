@@ -2,7 +2,7 @@ import { Component, WritableSignal, signal } from '@angular/core';
 import { Phone } from '../models/Phone';
 import { NativeDateAdapter } from "@angular/material/core";
 import * as moment from 'moment';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Insured } from '../models/Insured';
 import { Address } from '../models/Address';
 import { Company } from '../models/Company';
@@ -48,7 +48,10 @@ export class AdministrateComponent {
     this.maxDate = new Date(today.getFullYear() - 18,today.getMonth(),today.getDay());
     this.companies = [];
     this.companyService.getAll().subscribe({
-      next: (data:Company[]) => this.companies = data,
+      next: (data:Company[]) => {
+        this.companies = data;
+        this.loading.set(false);
+      },
       error: _ => {
           let mocks:Company[] = [];
           Object.assign(mocks,companiesMock)
@@ -79,6 +82,8 @@ export class AdministrateComponent {
       end: new FormControl('',Validators.required),
       policyStatus: new FormControl('',Validators.required),
       insurancePolicy: new FormControl(''),
+      paymentExpiration: new FormControl('',
+        [Validators.required,Validators.min(0),Validators.max(31)]),
     });
 
     if(this.route.snapshot.paramMap.get('insuredId') != null){
@@ -112,10 +117,10 @@ export class AdministrateComponent {
       this.insuredForm.controls['born'].value as Date,
       this.formatAddress(),
       this.insuredForm.controls['dni'].value,
-      // this.userLogged.id,
       this.userLogged!.id,
       this.phones,
       this.insuredForm.controls['policyStatus'].value,
+      this.insuredForm.controls['paymentExpiration'].value,
       undefined,
       undefined,
       this.insuredForm.controls['description'].value,
@@ -151,7 +156,7 @@ export class AdministrateComponent {
     const floor:number|undefined = this.insuredForm.controls['floor'].value != '' 
       ? this.insuredForm.controls['floor'].value
       : undefined;
-    const depto:number|undefined = this.insuredForm.controls['departament'].value != ''
+    const depto:string|undefined = this.insuredForm.controls['departament'].value != ''
       ? this.insuredForm.controls['departament'].value
       : undefined;
     return new Address(
@@ -206,6 +211,7 @@ export class AdministrateComponent {
       this.insuredForm.get('cuit')?.setValue(data.cuit);
       this.insuredForm.get('insurancePolicy')?.setValue(data.insurancePolicy);
       this.insuredForm.get('policyStatus')?.setValue(data.status);
+      this.insuredForm.get('paymentExpiration')?.setValue(data.paymentExpiration);
       this.loading.set(false);
     });
   }
@@ -213,7 +219,7 @@ export class AdministrateComponent {
   handleLife(life:string):Date[]{
     const ret:Date[] = [];
     life.split('-').forEach((dayMonth:string) => {
-      let helper:Date = new Date();
+      let helper:Date = new Date(2020,1,1);
       const dayMonthSplitted:string[] = dayMonth.split('/');
       const day:number = parseInt(dayMonthSplitted[0]);
       const month:number = parseInt(dayMonthSplitted[1]) - 1;
@@ -233,6 +239,14 @@ export class AdministrateComponent {
         status:status
       }
     });
+  }
+
+  getErrorMessage(formControlName:string):string{
+    let ret:string = '';
+    const control:AbstractControl = this.insuredForm.controls[formControlName];
+    if(control.hasError('min') || control.hasError('max'))
+      ret = 'El valor de la fecha debe estar entre 1 y 31, que son los días que tiene un mes';
+    return ret;
   }
 }
 

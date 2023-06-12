@@ -2,9 +2,9 @@ import { Insured } from "./Insured";
 
 export class ExcelDataResultDTO{
     public interpreted:Insured[];
-    public nonInterpreted:number[];
+    public nonInterpreted:string[];
 
-    constructor(interpreted:Insured[],nonInterpreted:number[]){
+    constructor(interpreted:Insured[],nonInterpreted:string[]){
         this.interpreted = interpreted;
         this.nonInterpreted = nonInterpreted;
     }

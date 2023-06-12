@@ -5,11 +5,11 @@ export class Address{
     public province:string;
     public country:string;
     public floor?:number;
-    public departament?:number;
+    public departament?:string;
     public id?:number;   
 
     constructor(street:string,number:string,city:string,province:string,country:string,
-                floor?:number,departament?:number,id?:number){
+                floor?:number,departament?:string,id?:number){
         this.street = street;
         this.number = number;
         this.city = city;

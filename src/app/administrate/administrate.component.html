@@ -192,6 +192,15 @@
         </div>
         <div>
           <mat-form-field>
+            <mat-label>Vencimiento de cuota</mat-label>
+            <input matInput type="number" formControlName="paymentExpiration" />
+            <mat-error *ngIf="!insuredForm.controls['paymentExpiration'].valid">
+              {{getErrorMessage("paymentExpiration")}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
             <mat-label>Vigencia</mat-label>
             <mat-date-range-input [rangePicker]="lifePicker">
               <input
@@ -199,7 +208,11 @@
                 placeholder="Inicio"
                 formControlName="start"
               />
-              <input matEndDate placeholder="Fin" formControlName="end" />
+              <input  
+                matEndDate 
+                placeholder="Fin" 
+                formControlName="end" 
+              />
             </mat-date-range-input>
             <mat-datepicker-toggle
               matIconSuffix
@@ -218,8 +231,6 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <!-- only for centering purposes -->
-        <div></div>
         <div class="button-container">
           <button mat-fab color="primary" [disabled]="!insuredForm.valid">
             <mat-icon class="icon-bigger">save</mat-icon>

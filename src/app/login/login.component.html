@@ -16,9 +16,9 @@
         [type]="hide() ? 'password' : 'text'"
         required
       />
-      <mat-error *ngIf="!form.controls['password'].valid">{{
-        getErrorMessage("password")
-      }}</mat-error>
+      <mat-error *ngIf="!form.controls['password'].valid">
+        {{getErrorMessage("password")}}
+      </mat-error>
       <button
         mat-icon-button
         matSuffix

@@ -7,8 +7,11 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent {
-  public status:boolean;
+  //positive or negative
+  public status?:boolean;
+  //the info to display
   public display:number;
+  //in case deleting an insured, the name of the insured
   public delete?:string;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
