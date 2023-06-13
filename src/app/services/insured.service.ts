@@ -8,32 +8,32 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root'
 })
 export class InsuredService {
-  private API_URL:string = environment.backendURL;
+  private API_URL:string = `${environment.backendURL}/api/insured`;
 
   constructor(private api:HttpClient) {}
 
   all():Observable<Insured[]>{
-    return this.api.get<Insured[]>(`${this.API_URL}/api/insured/all`);
+    return this.api.get<Insured[]>(`${this.API_URL}/all`);
   }
 
   getById(id:number):Observable<Insured>{
-    return this.api.get<Insured>(`${this.API_URL}/api/insured/${id}`);
+    return this.api.get<Insured>(`${this.API_URL}/${id}`);
   }
 
   search(query:string):Observable<Insured[]>{
     const param:string = query.replace(' ','+');
-    return this.api.get<Insured[]>(`${this.API_URL}/api/insured/search?query=${param}`);
+    return this.api.get<Insured[]>(`${this.API_URL}/search?query=${param}`);
   }
 
   create(insured:Insured):Observable<Response>{
-    return this.api.post<Response>(`${this.API_URL}/api/insured/new`,insured);
+    return this.api.post<Response>(`${this.API_URL}/new`,insured);
   }
 
   update(insured:Insured):Observable<Response>{
-    return this.api.put<Response>(`${this.API_URL}/api/insured/update`,insured);
+    return this.api.put<Response>(`${this.API_URL}/update`,insured);
   }
 
   delete(id:number):Observable<Response>{
-    return this.api.delete<Response>(`${this.API_URL}/api/insured/delete/${id}`);
+    return this.api.delete<Response>(`${this.API_URL}/delete/${id}`);
   }
 }

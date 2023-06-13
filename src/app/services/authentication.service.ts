@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private API_URL:string = environment.backendURL;
+  private API_URL:string = `${environment.backendURL}/api/auth`;
   private logged:Admin|null;
 
   constructor(private api:HttpClient) {
@@ -26,6 +26,6 @@ export class AuthenticationService {
   }
   
   authenticate(request:LoginRequest):Observable<Admin>{
-    return this.api.post<Admin>(`${this.API_URL}/api/auth`,request);
+    return this.api.post<Admin>(this.API_URL,request);
   }
 }

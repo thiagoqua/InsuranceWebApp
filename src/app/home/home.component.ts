@@ -30,8 +30,10 @@ export class HomeComponent{
     });
   }
 
-  makeSearch(event:string):void{
-    this.insureds$ = this.insuredService.search(event);
+  makeSearch(input:string):void{
+    if (!input.replace(/\s/g, '').length)
+      return;
+    this.insureds$ = this.insuredService.search(input);
     this.insureds$.subscribe()
   }
 

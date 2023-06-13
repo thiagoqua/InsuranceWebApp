@@ -9,7 +9,7 @@ import { authGuard } from './helpers/auth.guard';
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate:[authGuard]},
   {path:'iniciar',component:LoginComponent,canActivate:[authGuard]},
-  {path:'importar',component:ImportComponent,canActivate:[authGuard]},
+  {path:'importar-exportar',component:ImportComponent,canActivate:[authGuard]},
   {path:'administracion',component:AdministrateComponent,canActivate:[authGuard]},
   {path:'administracion/:insuredId',component:AdministrateComponent,canActivate:[authGuard]},
   {path:'login',component:LoginComponent}

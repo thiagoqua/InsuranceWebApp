@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root'
 })
 export class ProducerService {
-  private API_URL:string = environment.backendURL;
+  private API_URL:string = `${environment.backendURL}/api/producer`;
   
   constructor(private api:HttpClient) {}
 
   getAll():Observable<Producer[]>{
-    return this.api.get<Producer[]>(`${this.API_URL}/api/producer/all`);
+    return this.api.get<Producer[]>(`${this.API_URL}/all`);
   }
 }

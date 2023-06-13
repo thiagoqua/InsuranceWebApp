@@ -24,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
 import { ImportComponent } from './import/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
@@ -65,7 +66,8 @@ import { ExportComponent } from './export/export.component';
     MatToolbarModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule
   ],
   providers: [
     { provide: DateAdapter, useClass: AppDateAdapter },

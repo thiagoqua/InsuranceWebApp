@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CompanyService {
-  private API_URL:string = environment.backendURL;
+  private API_URL:string = `${environment.backendURL}/api/company`;
 
   constructor(private api:HttpClient) {}
 
   getAll():Observable<Company[]>{
-    return this.api.get<Company[]>(`${this.API_URL}/api/company/all`);
+    return this.api.get<Company[]>(`${this.API_URL}/all`);
   }
 }

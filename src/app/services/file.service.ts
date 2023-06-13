@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Insured } from '../models/Insured';
@@ -9,7 +9,7 @@ import { ExcelDataResultDTO } from '../models/ExcelDataResultDTO';
   providedIn: 'root'
 })
 export class FileService {
-  private API_URL:string = environment.backendURL;
+  private API_URL:string = `${environment.backendURL}/api/file`;
 
   constructor(private api:HttpClient) {}
 
@@ -20,14 +20,21 @@ export class FileService {
     );
 
     data.append('file',file,file.name);
-    return this.api.post<ExcelDataResultDTO>(`${this.API_URL}/api/file/upload`,data,{headers});
+    return this.api.post<ExcelDataResultDTO>(`${this.API_URL}/upload`,data,{headers});
   }
 
   proceed():Observable<Response>{
-    return this.api.get<Response>(`${this.API_URL}/api/file/store`);
+    return this.api.get<Response>(`${this.API_URL}/store`);
   }
   
   cancel():Observable<Response>{
-    return this.api.delete<Response>(`${this.API_URL}/api/file/cancel`);
+    return this.api.delete<Response>(`${this.API_URL}/cancel`);
+  }
+
+  download(to:string):Observable<any>{
+    return this.api.get(`${this.API_URL}/export?${to}=true`,{
+      observe:'response',
+      responseType:'blob'
+    });
   }
 }

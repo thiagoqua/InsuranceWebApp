@@ -26,8 +26,9 @@ export class InsuredsComponent {
     this.producersColors = {
       'zurdo':'#FAAC77',
       'tiki':'#D17CFA',
-      'ricardo':'#7996FA',
-      'leo':'#FAF28D'
+      'ricardo':'#FAF28D',
+      'leo':'#ADFFAD',
+      'rogelio':'#B0D9F0'
     }
     this.statusColors = {
       'activa':'greenyellow',
@@ -36,20 +37,30 @@ export class InsuredsComponent {
     }
   }    
 
-  evaluateColor(prod?:Producer,status?:string):string{
-    if(prod)
-      return `${this.producersColors[prod.firstname] || 'white'}`;
+  evaluateColor(company?:number,prod?:Producer,status?:string):string{
+    if(prod){
+      const def:string = 'white';
+      if(company! == 1)
+        return `${this.producersColors[prod.firstname] || def}`
+      else if(company! == 2)
+        return prod.id == 5 
+          ? `${this.producersColors[prod.firstname] || def}`
+          : def;
+    }
     else if(status)
       return `${this.statusColors[status.toLowerCase()] || 'white'}`;
     return '';
   }
 
-  onClick(actualRow:HTMLTableRowElement):void{
-    if(this.previousRow)
+  onSelected(actualRow:HTMLTableRowElement):void{
+    if(this.previousRow){
       this.previousRow.style.backgroundColor = this.previousRowBackground!;
+      this.previousRow.style.color = 'black';
+    }
     
     this.previousRowBackground = actualRow.style.backgroundColor;
-    actualRow.style.backgroundColor = '#B5E3BB';
+    actualRow.style.backgroundColor = '#6E7BF0';
+    actualRow.style.color = 'white';
     this.previousRow = actualRow;
   }
 

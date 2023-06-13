@@ -56,10 +56,10 @@ export class ImportComponent {
         this.insureds$ = of(data.interpreted);
         if(data.nonInterpreted.length > 0)
           this.nonInterpreted = data.nonInterpreted;
-        // setTimeout(() => {
-        //   if(this.location.path() == '/importar')
-        //     this.router.navigate(['']);
-        // },60000)
+        setTimeout(() => {
+          if(this.location.path() == '/importar')
+            this.router.navigate(['']);
+        },60000)
       },
       error:(err:HttpErrorResponse) => {
         if(err.status == 406)

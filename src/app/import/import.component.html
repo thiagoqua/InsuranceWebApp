@@ -42,7 +42,6 @@
   <mat-error *ngIf="error() != ''">{{ error() }}</mat-error>
   <mat-progress-bar mode="indeterminate" 
                     *ngIf="fileSended() && !uploadResponse()"></mat-progress-bar>
-                    
 </div>
 <app-insureds [insureds]="insureds$" [isPreview]="true"
               *ngIf="uploadResponse() == true"></app-insureds>

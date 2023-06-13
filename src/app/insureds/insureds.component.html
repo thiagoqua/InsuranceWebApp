@@ -23,11 +23,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let insured of insureds | async" #row
-          [ngStyle]="{'background-color':evaluateColor(insured.producerNavigation!)}"
-          (click)="onClick(row)">
+          [ngStyle]="{'background-color':evaluateColor(insured.company,insured.producerNavigation!)}"
+          (click)="onSelected(row)">
         <td>{{insured.firstname + " " + insured.lastname}}</td>
         <td><img src="{{insured.companyNavigation!.logo}}" class="company-img"/></td>
-        <td [ngStyle]="{'background-color':evaluateColor(undefined,insured.status)}">
+        <td [ngStyle]="{'background-color':evaluateColor(undefined,undefined,insured.status)}">
           {{ insured.status }}
         </td>
         <td>{{insured.insurancePolicy}}</td>

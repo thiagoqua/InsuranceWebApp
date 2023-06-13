@@ -1,1 +1,24 @@
-<h1>i am exporting</h1>
+<div class="main">
+  <div>
+    <h3>
+      {{fileSended() && fileOk() 
+        ? 'Archivo descargado. Volviendo a la pantalla principal' 
+        : 'Exportar base de datos a:'
+      }}
+    </h3>
+    <mat-radio-group [(ngModel)]="exportTo" [disabled]="fileSended()">
+      <mat-radio-button class="example-margin" value="PDF">PDF</mat-radio-button>
+      <mat-radio-button class="example-margin" value="excel">Excel</mat-radio-button>
+    </mat-radio-group>
+  </div>
+    <mat-error *ngIf="error()">{{error()}}</mat-error>
+    <button mat-fab extended color="warn" class="uploader-button"
+            (click)="export()"
+            [disabled]="fileSended()"
+    >
+      <mat-icon>send</mat-icon>
+      Exportar
+    </button>
+    <mat-progress-bar mode="indeterminate" 
+                      *ngIf="fileSended() && !fileOk()"></mat-progress-bar>
+</div>
