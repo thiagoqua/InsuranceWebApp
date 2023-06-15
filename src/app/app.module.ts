@@ -26,11 +26,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { AdministrateComponent, AppDateAdapter } from './administrate/administrate.component';
-import { ImportComponent } from './import/import.component'
+import { ImportComponent } from './import-export/import.component'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ExportComponent } from './export/export.component';
+import { BackupComponent } from './backup/backup.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ExportComponent } from './export/export.component';
     AdministrateComponent,
     ImportComponent,
     DialogComponent,
-    ExportComponent
+    ExportComponent,
+    BackupComponent
   ],
   imports: [
     BrowserModule,

@@ -13,12 +13,15 @@ export class DialogComponent {
   public display:number;
   //in case deleting an insured, the name of the insured
   public delete?:string;
+  //auxiliar string with data 
+  public aux?:string;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data:any){
     this.status = data.status;
     this.display = data.display;
     this.delete = data.delete;
+    this.aux = data.aux;
   }
 
 

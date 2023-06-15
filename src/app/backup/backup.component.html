@@ -1,0 +1,53 @@
+<div class="input">
+  <h3>Backups disponibles:</h3>
+  <mat-form-field>
+    <mat-label>Backup</mat-label>
+    <mat-select [disabled]="this.backupGetted() != undefined">
+      <mat-option
+        *ngFor="let backup of backupsAvailables"
+        #opt
+        [value]="backup"
+        (click)="seeBackup(opt.value)"
+      >
+        {{ backup }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="error()">{{ error() }}</mat-error>
+  </mat-form-field>
+</div>
+
+<app-insureds
+  *ngIf="backupSelected()"
+  [insureds]="backupData"
+  [isPreview]="true"
+></app-insureds>
+
+<div>
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="this.backupGetted() == false"
+  ></mat-progress-bar>
+  <div *ngIf="this.backupGetted() == true" class="buttons">
+    <button
+      mat-fab
+      extended
+      color="primary"
+      class="cancel-button"
+      (click)="cancel()"
+      routerLink="/"
+    >
+      <mat-icon>cancel</mat-icon>
+      Canclear
+    </button>
+    <button
+      mat-fab
+      extended
+      color="warn"
+      class="uploader-button"
+      (click)="makeChanges()"
+    >
+      <mat-icon>send</mat-icon>
+      Recuperar datos
+    </button>
+  </div>
+</div>

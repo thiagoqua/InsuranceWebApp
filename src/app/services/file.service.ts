@@ -37,4 +37,14 @@ export class FileService {
       responseType:'blob'
     });
   }
+
+  getBackupsDates():Observable<string[]>{
+    return this.api.get<string[]>(`${this.API_URL}/backup/all`);
+  }
+
+  getBackupData(which:string):Observable<Insured[]>{
+    const backupName:string = which.replace(' ','+');
+    //ENDPOINT CAMBIADO OJO
+    return this.api.get<Insured[]>(`${this.API_URL}/backup/data?name=${backupName}`);
+  }
 }

@@ -45,7 +45,7 @@
 <div *ngIf="display == 3 && status == undefined">
   <h1 mat-dialog-title>Modificar toda la base de datos</h1>
   <div mat-dialog-content>
-    Tenga en cuenta que, procediendo con la importación, <b>se borrarán todos los registros de la base de datos</b>, siendo reemplazados por los importados en el archivo excel.
+    Tenga en cuenta que, procediendo con la {{aux}}, <b>se borrarán todos los registros de la base de datos</b>, siendo reemplazados por los nuevos.
   </div>
   <mat-dialog-actions align="end">
     <button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial>

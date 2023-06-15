@@ -16,6 +16,7 @@ import { Location } from '@angular/common';
 })
 export class ImportComponent {
   public export:WritableSignal<boolean|undefined> = signal(undefined);
+  public backup:WritableSignal<boolean|undefined> = signal(undefined);
   public error:WritableSignal<string> = signal('');
   public fileName:WritableSignal<string> = signal('Elegir archivo Excel');
   public fileOk:WritableSignal<boolean> = signal(false);
@@ -57,7 +58,7 @@ export class ImportComponent {
         if(data.nonInterpreted.length > 0)
           this.nonInterpreted = data.nonInterpreted;
         setTimeout(() => {
-          if(this.location.path() == '/importar')
+          if(this.location.path() == '/importar-exportar')
             this.router.navigate(['']);
         },60000)
       },
@@ -91,7 +92,7 @@ export class ImportComponent {
   }
 
   handleStore():void{
-    const ref:MatDialogRef<DialogComponent> = this.openDialog({display:3});
+    const ref:MatDialogRef<DialogComponent> = this.openDialog({display:3,aux:'importación'});
     ref.afterClosed().subscribe((proceed:boolean) => {
       if(proceed)
         this.fileService.proceed().subscribe({

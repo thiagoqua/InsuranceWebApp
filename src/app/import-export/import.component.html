@@ -3,12 +3,16 @@
         <mat-icon class="icon-bigger">keyboard_backspace</mat-icon>
     </button>
     <button mat-fab matTooltip="importar" [color]="'primary'"
-            (click)="this.export.set(false)">
+            (click)="this.export.set(false);this.backup.set(undefined)">
         <mat-icon class="icon-bigger">cloud_download</mat-icon>
     </button>
     <button mat-fab matTooltip="exportar" [color]="'primary'"
-            (click)="this.export.set(true)">
+            (click)="this.export.set(true);this.backup.set(undefined)">
         <mat-icon class="icon-bigger">cloud_upload</mat-icon>
+    </button>
+    <button mat-fab matTooltip="recuperar" [color]="'primary'"
+            (click)="this.backup.set(true);this.export.set(undefined)">
+        <mat-icon class="icon-bigger">settings_backup_restore</mat-icon>
     </button>
 </div>
 
@@ -59,4 +63,5 @@
   </div>
 </div>
 
-<app-export *ngIf="export() == true"></app-export>
+<app-export *ngIf="export()"></app-export>
+<app-backup *ngIf="backup()"></app-backup>
