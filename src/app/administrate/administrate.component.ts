@@ -7,7 +7,6 @@ import { Insured } from '../models/Insured';
 import { Address } from '../models/Address';
 import { Company } from '../models/Company';
 import { CompanyService } from '../services/company.service';
-import * as companiesMock from '../mock/companies.json';
 import { InsuredService } from '../services/insured.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -51,37 +50,31 @@ export class AdministrateComponent {
       next: (data:Company[]) => {
         this.companies = data;
         this.loading.set(false);
-      },
-      error: _ => {
-          let mocks:Company[] = [];
-          Object.assign(mocks,companiesMock)
-          this.usingMocks.set(true);
-          this.companies = mocks;
       }
     });
     
     this.insuredForm = new FormGroup({
-      firstname: new FormControl('',Validators.required),
-      lastname: new FormControl('',Validators.required),
+      firstname: new FormControl('',[Validators.required,Validators.maxLength(25)]),
+      lastname: new FormControl('',[Validators.required,Validators.maxLength(30)]),
       born: new FormControl('',Validators.required),
       company: new FormControl('',Validators.required),
       phones: new FormControl('',Validators.required),
-      description: new FormControl(''),
-      dni: new FormControl('',Validators.required),
-      cuit: new FormControl(''),
-      street: new FormControl('',Validators.required),
-      number: new FormControl('',Validators.required),
-      city: new FormControl('',Validators.required),
-      province: new FormControl('',Validators.required),
-      country: new FormControl('',Validators.required),
-      floor: new FormControl(''),
-      departament: new FormControl(''),
-      license: new FormControl('',Validators.required),
-      folder: new FormControl('',Validators.required),
+      description: new FormControl('',Validators.maxLength(100)),
+      dni: new FormControl('',[Validators.required,Validators.maxLength(8)]),
+      cuit: new FormControl('',Validators.maxLength(15)),
+      street: new FormControl('',[Validators.required,Validators.maxLength(50)]),
+      number: new FormControl('',[Validators.required,Validators.maxLength(8)]),
+      city: new FormControl('',[Validators.required,Validators.maxLength(30)]),
+      province: new FormControl('',[Validators.required,Validators.maxLength(30)]),
+      country: new FormControl('',[Validators.required,Validators.maxLength(20)]),
+      floor: new FormControl('',Validators.maxLength(5)),
+      departament: new FormControl('',Validators.maxLength(5)),
+      license: new FormControl('',[Validators.required,Validators.maxLength(15)]),
+      folder: new FormControl('',[Validators.required,Validators.maxLength(5)]),
       start: new FormControl('',Validators.required),
       end: new FormControl('',Validators.required),
       policyStatus: new FormControl('',Validators.required),
-      insurancePolicy: new FormControl(''),
+      insurancePolicy: new FormControl('',Validators.maxLength(50)),
       paymentExpiration: new FormControl('',
         [Validators.required,Validators.min(0),Validators.max(31)]),
     });
@@ -130,14 +123,14 @@ export class AdministrateComponent {
     if(this.insuredId){
       newInsured.id = this.insuredId;
       this.insuredService.update(newInsured).subscribe({
-        next: res => this.openDialog(true),
-        error: error => this.openDialog(false)
+        next: _ => this.openDialog(true),
+        error: _ => this.openDialog(false)
       });
     }
     else {
       this.insuredService.create(newInsured).subscribe({
-        next: res => this.openDialog(true),
-        error: error => this.openDialog(false)
+        next: _ => this.openDialog(true),
+        error: _ => this.openDialog(false)
       });
     }
   }

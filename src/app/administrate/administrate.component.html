@@ -65,14 +65,14 @@
         <div class="inside-items">
           <mat-form-field>
             <mat-label>Tel</mat-label>
-            <input matInput #number type="text" />
+            <input matInput #number type="text" [maxLength]="20"/>
           </mat-form-field>
         </div>
         <div class="inside-items">
           <div class="flexdiv">
             <mat-form-field>
               <mat-label>Descripción tel (opcional)</mat-label>
-              <input matInput #desc type="text" />
+              <input matInput #desc type="text" [maxLength]="30"/>
             </mat-form-field>
             <button
               mat-fab

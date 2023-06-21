@@ -2,7 +2,6 @@ import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { InsuredService } from '../services/insured.service';
 import { Observable, of } from 'rxjs';
 import { Insured } from '../models/Insured';
-import * as insuredsMock from '../mock/insureds.json';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -20,13 +19,7 @@ export class HomeComponent{
               private authService:AuthenticationService){
     this.insureds$ = this.insuredService.all();
     this.insureds$.subscribe({
-      next: (data:Insured[]) => this.allInsureds = data,
-      error: _ => {
-        let mocks:Insured[] = [];
-        Object.assign(mocks,insuredsMock)
-        this.insureds$ = of(mocks);
-        this.usingMocks.set(true);
-      }
+      next: (data:Insured[]) => this.allInsureds = data
     });
   }
 
