@@ -206,22 +206,32 @@ export class AdministrateComponent {
       this.insuredForm.get('policyStatus')?.setValue(data.status);
       this.insuredForm.get('paymentExpiration')?.setValue(data.paymentExpiration);
       this.loading.set(false);
+      console.log(
+        this.insuredForm.get('start')?.errors,
+        this.insuredForm.get('end')?.errors
+      )
     });
+
   }
 
   handleLife(life:string):Date[]{
-    const ret:Date[] = [];
-    life.split('-').forEach((dayMonth:string) => {
-      let helper:Date = new Date(2020,1,1);
-      const dayMonthSplitted:string[] = dayMonth.split('/');
-      const day:number = parseInt(dayMonthSplitted[0]);
-      const month:number = parseInt(dayMonthSplitted[1]) - 1;
-      helper.setDate(day);
-      helper.setMonth(month);
-      ret.push(helper);
-    })
+    const dates:string[] = life.split('-');
+    const startYear:number = 2020;
+    let startDay:number = parseInt(dates[0].split('/')[0]);
+    let startMonth:number = parseInt(dates[0].split('/')[1]);
+    let endDay:number = parseInt(dates[1].split('/')[0]);
+    let endMonth:number = parseInt(dates[1].split('/')[1]);
+    let endYear:number;
+
+    if(startMonth > endMonth)
+      endYear = 2021;
+    else 
+      endYear = startYear;
     
-    return ret;
+    return [
+      new Date(startYear,startMonth - 1,startDay),
+      new Date(endYear,endMonth - 1,endDay)
+    ];
   }
 
   openDialog(status:boolean): void {
