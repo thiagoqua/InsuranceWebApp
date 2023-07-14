@@ -18,7 +18,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
     const account: Admin | null = this.service.userLogged;
-    const isAuthenticatedUrl: boolean = !request.url.startsWith(this.NON_AUTH_NEED_API_URL);
+    const isAuthenticatedUrl: boolean = !request.url.match(this.NON_AUTH_NEED_API_URL);
     if (account != null && isAuthenticatedUrl) {
       request = request.clone({
         setHeaders: { Authorization: `Bearer ${account!.token}` },

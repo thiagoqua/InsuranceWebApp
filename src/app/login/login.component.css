@@ -41,3 +41,9 @@ mat-progress-bar{
     font-weight: 600;
     min-height: 70px;
 }
+
+@media(max-width:860px){
+    mat-form-field, .submitter{
+        width:60%;
+    }
+}

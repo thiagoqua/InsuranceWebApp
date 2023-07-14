@@ -28,4 +28,8 @@ export class AuthenticationService {
   authenticate(request:LoginRequest):Observable<Admin>{
     return this.api.post<Admin>(this.API_URL,request);
   }
+
+  checkTokenValidation():Observable<Response>{
+    return this.api.get<Response>(`${this.API_URL}/check`);
+  }
 }

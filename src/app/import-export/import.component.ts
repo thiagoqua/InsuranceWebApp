@@ -18,7 +18,7 @@ export class ImportComponent {
   public export:WritableSignal<boolean|undefined> = signal(undefined);
   public backup:WritableSignal<boolean|undefined> = signal(undefined);
   public error:WritableSignal<string> = signal('');
-  public fileName:WritableSignal<string> = signal('Elegir archivo Excel');
+  public fileName:WritableSignal<string> = signal('Examinar');
   public fileOk:WritableSignal<boolean> = signal(false);
   public fileSended:WritableSignal<boolean> = signal(false);
   public uploadResponse:WritableSignal<boolean|undefined> = signal(undefined);

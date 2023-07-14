@@ -66,3 +66,14 @@ mat-form-field{
     color:indigo;
     background-color: rgb(201, 201, 201);
 }
+
+@media(max-width:890px){
+    .section{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}

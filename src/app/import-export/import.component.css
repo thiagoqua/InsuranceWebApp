@@ -62,3 +62,9 @@ mat-error{
 .emptier{
     background-color: black;
 }
+
+@media(max-width:900px){
+    .button-container{
+        gap:7vw;
+    }
+}
