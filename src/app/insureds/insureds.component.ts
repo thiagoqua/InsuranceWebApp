@@ -24,11 +24,9 @@ export class InsuredsComponent {
 
   constructor(private service:InsuredService,private dialog:MatDialog){
     this.producersColors = {
-      'zurdo':'#FAAC77',
       'tiki':'#D17CFA',
-      'ricardo':'#FAF28D',
-      'leo':'#ADFFAD',
-      'rogelio':'#B0D9F0'
+      'pepe':'#A4FFE2',
+      'checo':'#FFF188',
     }
     this.statusColors = {
       'activa':'greenyellow',
