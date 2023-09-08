@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/enviorment.prod';
 import { Insured } from '../models/Insured';
 import { Observable, of } from 'rxjs';
 import { ExcelDataResultDTO } from '../models/ExcelDataResultDTO';

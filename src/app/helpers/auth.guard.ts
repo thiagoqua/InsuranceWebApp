@@ -7,9 +7,12 @@ export const authGuard:CanActivateFn = (route, state) => {
   const service:AuthenticationService = inject(AuthenticationService);
 
   if(service.userLogged != null){
-    service.checkTokenValidation().subscribe((res:Response) => {
-      if(!res.ok)
-        router.navigate(['/login']);
+    service.checkTokenValidation().subscribe({
+      next: (res:Response) => {
+        if(!res.ok)
+          router.navigate(['/login']);
+      },
+      error: _ => {}
     })
   } 
   else 

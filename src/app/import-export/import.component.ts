@@ -58,7 +58,7 @@ export class ImportComponent {
         if(data.nonInterpreted.length > 0)
           this.nonInterpreted = data.nonInterpreted;
         setTimeout(() => {
-          if(this.location.path() == '/importar-exportar')
+          if(this.location.path() == '/importar-exportar' && this.fileSended())
             this.router.navigate(['']);
         },60000)
       },

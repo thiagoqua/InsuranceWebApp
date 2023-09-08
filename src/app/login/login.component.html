@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+<form [formGroup]="form">
   <div class="container">
     <h1>Ingreso al sistema</h1>
     <mat-form-field color="accent">
@@ -17,7 +17,7 @@
         required
       />
       <mat-error *ngIf="!form.controls['password'].valid">
-        {{getErrorMessage("password")}}
+        {{ getErrorMessage("password") }}
       </mat-error>
       <button
         mat-icon-button
@@ -29,7 +29,13 @@
         <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
     </mat-form-field>
-    <button *ngIf="!loading()" mat-raised-button color="primary" class="submitter">
+    <button
+      *ngIf="!loading()"
+      mat-raised-button
+      color="primary"
+      class="submitter"
+      (click)="handleSubmit()"
+    >
       Iniciar sesión
     </button>
     <mat-progress-bar *ngIf="loading()" mode="query"></mat-progress-bar>

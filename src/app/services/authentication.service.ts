@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/enviorment.prod';
 import { LoginRequest } from '../models/LoginRequest';
 import { Observable } from 'rxjs';
 import { Admin } from '../models/Admin';
