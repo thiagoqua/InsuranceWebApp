@@ -14,12 +14,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent {
   public hide:WritableSignal<boolean>;
   public loading:WritableSignal<boolean>;
+  public enableServerWaiting:WritableSignal<boolean>;
   public form:FormGroup;
 
   constructor(private service:AuthenticationService,
               private router:Router){
     this.hide = signal(true);
     this.loading = signal(false);
+    this.enableServerWaiting = signal(false);
     this.form = new FormGroup({
       username:new FormControl(),
       password:new FormControl()
@@ -49,6 +51,9 @@ export class LoginComponent {
       this.form.get('username')!.value,
       this.form.get('password')!.value
     );
+    
+    setTimeout(() => this.enableServerWaiting.set(true),2000);
+
     this.service.authenticate(request).subscribe({
       next: (data:Admin) => {
         this.loading.set(false);

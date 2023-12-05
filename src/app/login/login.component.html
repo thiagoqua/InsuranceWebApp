@@ -39,5 +39,9 @@
       Iniciar sesión
     </button>
     <mat-progress-bar *ngIf="loading()" mode="query"></mat-progress-bar>
+    <mat-error *ngIf="enableServerWaiting()">
+      Esperando que el servidor despierte. Puede tardar unos
+      segundos...
+    </mat-error>
   </div>
 </form>
